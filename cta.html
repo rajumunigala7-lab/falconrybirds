@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Book a Visit | Aviora Bird Sanctuary</title>
+  <meta name="description" content="Book your visit to Aviora Bird Sanctuary and enjoy a peaceful experience with birds and nature.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <style>
+    :root {
+      --primary: #245c45;
+      --primary-dark: #173f30;
+      --accent: #d8a84e;
+
+      --bg: #f7faf8;
+      --surface: #ffffff;
+      --surface-soft: #eef5f0;
+
+      --text: #183127;
+      --text-soft: #697a71;
+
+      --border: #d9e5de;
+
+      --success: #2d7b55;
+
+      --shadow: 0 18px 55px rgba(24, 49, 39, 0.09);
+      --shadow-soft: 0 10px 30px rgba(24, 49, 39, 0.07);
+
+      --radius: 24px;
+      --radius-small: 14px;
+    }
+
+    body.dark {
+      --primary: #79bb98;
+      --primary-dark: #9dceb1;
+      --accent: #e4bd67;
+
+      --bg: #0d1713;
+      --surface: #14211b;
+      --surface-soft: #1b2b23;
+
+      --text: #edf6f0;
+      --text-soft: #a9bbb1;
+
+      --border: #2b4036;
+
+      --success: #7dc79d;
+
+      --shadow: 0 18px 55px rgba(0, 0, 0, 0.30);
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.20);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================================
+       TOP CONTROLS
+    ========================================= */
+
+    .top-controls {
+      position: fixed;
+      top: 22px;
+      right: 22px;
+      z-index: 1000;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    html[dir="rtl"] .top-controls {
+      right: auto;
+      left: 22px;
+    }
+
+    .control-btn {
+      width: 46px;
+      height: 46px;
+
+      border: 1px solid var(--border);
+      border-radius: 14px;
+
+      background: var(--surface);
+      color: var(--primary);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      box-shadow: var(--shadow-soft);
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .control-btn:hover {
+      transform: translateY(-2px);
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    body.dark .control-btn:hover {
+      color: #102018;
+    }
+
+    /* =========================================
+       PAGE
+    ========================================= */
+
+    .page {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 55px 0 70px;
+    }
+
+    /* =========================================
+       LOGO
+    ========================================= */
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 42px;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .logo-mark {
+      width: 62px;
+      height: 62px;
+
+      border-radius: 18px;
+
+      background: var(--surface);
+      border: 1px solid var(--border);
+
+      color: var(--primary);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      box-shadow: var(--shadow-soft);
+
+      transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+    }
+
+    .logo-mark svg {
+      width: 42px;
+      height: 42px;
+    }
+
+    .logo-text {
+      font-family: "Playfair Display", serif;
+      font-size: 35px;
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      line-height: 1;
+      color: var(--primary);
+    }
+
+    body.dark .logo-text {
+      color: var(--primary);
+    }
+
+    .logo-text span {
+      color: var(--accent);
+    }
+
+    .brand-caption {
+      display: block;
+      margin-top: 6px;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+
+      color: var(--primary);
+    }
+
+    /* =========================================
+       INTRO
+    ========================================= */
+
+    .intro {
+      max-width: 760px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .intro-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 9px 15px;
+
+      border-radius: 999px;
+
+      background: var(--surface-soft);
+      color: var(--primary);
+
+      border: 1px solid var(--border);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      margin-bottom: 18px;
+    }
+
+    .intro h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 6vw, 66px);
+      line-height: 1.05;
+
+      margin-bottom: 18px;
+
+      color: var(--text);
+    }
+
+    .intro p {
+      max-width: 650px;
+      margin: 0 auto;
+
+      color: var(--text-soft);
+
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* =========================================
+       BOOKING GRID
+    ========================================= */
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.75fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* =========================================
+       CARDS
+    ========================================= */
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      box-shadow: var(--shadow);
+
+      transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .form-card {
+      padding: 34px;
+    }
+
+    .info-card {
+      padding: 30px;
+      position: sticky;
+      top: 25px;
+    }
+
+    .card-title {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+
+      margin-bottom: 26px;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+
+      flex: 0 0 48px;
+
+      border-radius: 14px;
+
+      background: var(--surface-soft);
+      color: var(--primary);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid var(--border);
+    }
+
+    .card-title h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      line-height: 1.2;
+
+      margin-bottom: 5px;
+    }
+
+    .card-title p {
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* =========================================
+       FORM
+    ========================================= */
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .field label span {
+      color: #c05a4b;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-wrap i {
+      position: absolute;
+
+      top: 50%;
+      left: 16px;
+
+      transform: translateY(-50%);
+
+      color: var(--primary);
+
+      pointer-events: none;
+    }
+
+    html[dir="rtl"] .input-wrap i {
+      left: auto;
+      right: 16px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius-small);
+
+      background: var(--bg);
+      color: var(--text);
+
+      outline: none;
+
+      transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .field input,
+    .field select {
+      min-height: 52px;
+      padding: 0 16px 0 45px;
+    }
+
+    html[dir="rtl"] .field input,
+    html[dir="rtl"] .field select {
+      padding: 0 45px 0 16px;
+    }
+
+    .field textarea {
+      min-height: 125px;
+      resize: vertical;
+      padding: 15px 16px;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(36, 92, 69, 0.10);
+    }
+
+    body.dark .field input:focus,
+    body.dark .field select:focus,
+    body.dark .field textarea:focus {
+      box-shadow: 0 0 0 4px rgba(121, 187, 152, 0.12);
+    }
+
+    /* =========================================
+       AGREEMENT
+    ========================================= */
+
+    .agreement {
+      margin-top: 5px;
+
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+
+      padding: 15px;
+
+      border-radius: 14px;
+
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+    }
+
+    .agreement input {
+      width: 18px;
+      height: 18px;
+
+      margin-top: 2px;
+
+      accent-color: var(--primary);
+      flex: 0 0 auto;
+    }
+
+    .agreement label {
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.6;
+      cursor: pointer;
+    }
+
+    /* =========================================
+       BUTTON
+    ========================================= */
+
+    .submit-btn {
+      width: 100%;
+
+      min-height: 56px;
+
+      margin-top: 22px;
+
+      border: 0;
+      border-radius: 15px;
+
+      background: var(--primary);
+      color: #fff;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      font-size: 15px;
+      font-weight: 700;
+
+      box-shadow: 0 12px 28px rgba(36, 92, 69, 0.20);
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      background: var(--primary-dark);
+      box-shadow: 0 16px 32px rgba(36, 92, 69, 0.25);
+    }
+
+    body.dark .submit-btn {
+      color: #102018;
+    }
+
+    /* =========================================
+       SUCCESS
+    ========================================= */
+
+    .success-message {
+      display: none;
+
+      margin-top: 18px;
+
+      padding: 16px 18px;
+
+      border-radius: 14px;
+
+      background: rgba(45, 123, 85, 0.10);
+      border: 1px solid rgba(45, 123, 85, 0.25);
+
+      color: var(--success);
+
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    .success-message.show {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    /* =========================================
+       INFO CARD
+    ========================================= */
+
+    .info-heading {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .info-intro {
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+    }
+
+    .info-item-icon {
+      width: 42px;
+      height: 42px;
+
+      flex: 0 0 42px;
+
+      border-radius: 12px;
+
+      background: var(--surface-soft);
+      color: var(--primary);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid var(--border);
+    }
+
+    .info-item strong {
+      display: block;
+      margin-bottom: 3px;
+
+      font-size: 14px;
+    }
+
+    .info-item span {
+      display: block;
+
+      color: var(--text-soft);
+
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .info-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 25px 0;
+    }
+
+    .tip-box {
+      padding: 17px;
+
+      border-radius: 15px;
+
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+    }
+
+    .tip-box strong {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      margin-bottom: 7px;
+
+      color: var(--primary);
+
+      font-size: 14px;
+    }
+
+    .tip-box p {
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 900px) {
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-card {
+        position: static;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .page {
+        width: min(100% - 24px, 560px);
+        padding: 85px 0 40px;
+      }
+
+      .top-controls {
+        top: 15px;
+        right: 15px;
+      }
+
+      html[dir="rtl"] .top-controls {
+        right: auto;
+        left: 15px;
+      }
+
+      .control-btn {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+      }
+
+      .brand {
+        margin-bottom: 30px;
+      }
+
+      .logo-mark {
+        width: 54px;
+        height: 54px;
+        border-radius: 15px;
+      }
+
+      .logo-mark svg {
+        width: 37px;
+        height: 37px;
+      }
+
+      .logo-text {
+        font-size: 30px;
+      }
+
+      .intro {
+        margin-bottom: 32px;
+      }
+
+      .intro h1 {
+        font-size: 43px;
+      }
+
+      .intro p {
+        font-size: 15px;
+      }
+
+      .form-card,
+      .info-card {
+        padding: 23px;
+        border-radius: 20px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .intro h1 {
+        font-size: 37px;
+      }
+
+      .logo-text {
+        font-size: 27px;
+      }
+
+      .brand-caption {
+        font-size: 9px;
+      }
+
+      .card-title h2 {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================
+       FLOATING CONTROLS
+  ========================================= -->
+
+  <div class="top-controls">
+
+    <button
+      class="control-btn"
+      id="directionToggle"
+      type="button"
+      title="Switch RTL / LTR"
+      aria-label="Switch RTL / LTR"
+    >
+      <i class="fa-solid fa-arrow-right-arrow-left"></i>
+    </button>
+
+    <button
+      class="control-btn"
+      id="themeToggle"
+      type="button"
+      title="Toggle dark mode"
+      aria-label="Toggle dark mode"
+    >
+      <i class="fa-solid fa-moon"></i>
+    </button>
+
+  </div>
+
+
+  <!-- =========================================
+       PAGE
+  ========================================= -->
+
+  <main class="page">
+
+    <!-- =======================================
+         LOGO
+    ======================================== -->
+
+    <div class="brand">
+
+      <a href="index.html" class="brand-link" aria-label="Aviora Home">
+
+        <div class="logo-mark">
+
+          <svg
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 42C22 40 27 34 31 25C34 19 40 15 51 14C45 20 43 25 43 31C43 39 36 48 22 49"
+              stroke="currentColor"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+            <path
+              d="M31 25C35 28 38 32 39 38"
+              stroke="currentColor"
+              stroke-width="4"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M43 31L53 34"
+              stroke="currentColor"
+              stroke-width="4"
+              stroke-linecap="round"
+            />
+          </svg>
+
+        </div>
+
+        <div>
+          <div class="logo-text">
+            Avi<span>ora</span>
+          </div>
+
+          <span class="brand-caption">
+            Bird Sanctuary
+          </span>
+        </div>
+
+      </a>
+
+    </div>
+
+
+    <!-- =======================================
+         INTRO
+    ======================================== -->
+
+    <section class="intro">
+
+      <div class="intro-label">
+        <i class="fa-solid fa-feather-pointed"></i>
+        Plan Your Visit
+      </div>
+
+      <h1>Book a Visit</h1>
+
+      <p>
+        Reserve your preferred date and time for a peaceful experience
+        with birds, nature and the Aviora Sanctuary team.
+      </p>
+
+    </section>
+
+
+    <!-- =======================================
+         BOOKING CONTENT
+    ======================================== -->
+
+    <section class="booking-grid">
+
+
+      <!-- =====================================
+           FORM
+      ====================================== -->
+
+      <div class="card form-card">
+
+        <div class="card-title">
+
+          <div class="card-icon">
+            <i class="fa-regular fa-calendar-check"></i>
+          </div>
+
+          <div>
+            <h2>Visitor Details</h2>
+
+            <p>
+              Complete the form below to request your sanctuary visit.
+            </p>
+          </div>
+
+        </div>
+
+
+        <form id="bookingForm">
+
+          <div class="form-grid">
+
+
+            <!-- Full Name -->
+            <div class="field">
+
+              <label for="fullName">
+                Full Name <span>*</span>
+              </label>
+
+              <div class="input-wrap">
+
+                <i class="fa-regular fa-user"></i>
+
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  placeholder="Enter your full name"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+
+            <!-- Email -->
+            <div class="field">
+
+              <label for="email">
+                Email Address <span>*</span>
+              </label>
+
+              <div class="input-wrap">
+
+                <i class="fa-regular fa-envelope"></i>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+
+            <!-- Phone -->
+            <div class="field">
+
+              <label for="phone">
+                Phone Number
+              </label>
+
+              <div class="input-wrap">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Enter phone number"
+                >
+
+              </div>
+
+            </div>
+
+
+            <!-- Visitors -->
+            <div class="field">
+
+              <label for="visitors">
+                Number of Visitors <span>*</span>
+              </label>
+
+              <div class="input-wrap">
+
+                <i class="fa-solid fa-users"></i>
+
+                <select id="visitors" name="visitors" required>
+
+                  <option value="">
+                    Select visitors
+                  </option>
+
+                  <option value="1">
+                    1 Visitor
+                  </option>
+
+                  <option value="2">
+                    2 Visitors
+                  </option>
+
+                  <option value="3">
+                    3 Visitors
+                  </option>
+
+                  <option value="4">
+                    4 Visitors
+                  </option>
+
+                  <option value="5">
+                    5 Visitors
+                  </option>
+
+                  <option value="6">
+                    6 Visitors
+                  </option>
+
+                  <option value="7">
+                    7 Visitors
+                  </option>
+
+                  <option value="8">
+                    8 Visitors
+                  </option>
+
+                  <option value="9">
+                    9 Visitors
+                  </option>
+
+                  <option value="10+">
+                    10+ Visitors
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+
+            <!-- Date -->
+            <div class="field">
+
+              <label for="visitDate">
+                Visit Date <span>*</span>
+              </label>
+
+              <div class="input-wrap">
+
+                <i class="fa-regular fa-calendar"></i>
+
+                <input
+                  type="date"
+                  id="visitDate"
+                  name="visitDate"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+
+            <!-- Time -->
+            <div class="field">
+
+              <label for="visitTime">
+                Preferred Time <span>*</span>
+              </label>
+
+              <div class="input-wrap">
+
+                <i class="fa-regular fa-clock"></i>
+
+                <select
+                  id="visitTime"
+                  name="visitTime"
+                  required
+                >
+
+                  <option value="">
+                    Select time
+                  </option>
+
+                  <option value="09:00 AM">
+                    09:00 AM
+                  </option>
+
+                  <option value="10:00 AM">
+                    10:00 AM
+                  </option>
+
+                  <option value="11:00 AM">
+                    11:00 AM
+                  </option>
+
+                  <option value="12:00 PM">
+                    12:00 PM
+                  </option>
+
+                  <option value="02:00 PM">
+                    02:00 PM
+                  </option>
+
+                  <option value="03:00 PM">
+                    03:00 PM
+                  </option>
+
+                  <option value="04:00 PM">
+                    04:00 PM
+                  </option>
+
+                  <option value="05:00 PM">
+                    05:00 PM
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+
+            <!-- Visit Type -->
+            <div class="field full">
+
+              <label for="visitType">
+                Visit Type <span>*</span>
+              </label>
+
+              <div class="input-wrap">
+
+                <i class="fa-solid fa-feather-pointed"></i>
+
+                <select
+                  id="visitType"
+                  name="visitType"
+                  required
+                >
+
+                  <option value="">
+                    Select visit type
+                  </option>
+
+                  <option value="General Visit">
+                    General Sanctuary Visit
+                  </option>
+
+                  <option value="Photography">
+                    Bird Photography
+                  </option>
+
+                  <option value="Education">
+                    Educational Visit
+                  </option>
+
+                  <option value="Family">
+                    Family Experience
+                  </option>
+
+                  <option value="Group">
+                    Group Visit
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+
+            <!-- Notes -->
+            <div class="field full">
+
+              <label for="notes">
+                Additional Notes
+              </label>
+
+              <textarea
+                id="notes"
+                name="notes"
+                placeholder="Tell us if you have any special requests or questions..."
+              ></textarea>
+
+            </div>
+
+
+            <!-- Agreement -->
+            <div class="field full">
+
+              <div class="agreement">
+
+                <input
+                  type="checkbox"
+                  id="agreement"
+                  name="agreement"
+                  required
+                >
+
+                <label for="agreement">
+                  I understand that this is a visit request and that
+                  the final confirmation may depend on sanctuary
+                  availability and visitor guidelines.
+                </label>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Submit -->
+          <button
+            type="submit"
+            class="submit-btn"
+          >
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            Request a Visit
+
+          </button>
+
+
+          <!-- Success -->
+          <div
+            class="success-message"
+            id="successMessage"
+          >
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>
+              Your visit request has been submitted successfully.
+              This demo form does not send data to a server.
+            </span>
+
+          </div>
+
+        </form>
+
+      </div>
+
+
+      <!-- =====================================
+           INFORMATION
+      ====================================== -->
+
+      <aside class="card info-card">
+
+        <h2 class="info-heading">
+          Visitor Information
+        </h2>
+
+        <p class="info-intro">
+          A few helpful details to make your Aviora visit comfortable,
+          peaceful and enjoyable.
+        </p>
+
+
+        <div class="info-list">
+
+
+          <!-- Opening Hours -->
+          <div class="info-item">
+
+            <div class="info-item-icon">
+              <i class="fa-regular fa-clock"></i>
+            </div>
+
+            <div>
+
+              <strong>
+                Opening Hours
+              </strong>
+
+              <span>
+                Daily: 9:00 AM – 5:00 PM
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- Booking -->
+          <div class="info-item">
+
+            <div class="info-item-icon">
+              <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <div>
+
+              <strong>
+                Advance Booking
+              </strong>
+
+              <span>
+                We recommend reserving your preferred date ahead of time.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- Photography -->
+          <div class="info-item">
+
+            <div class="info-item-icon">
+              <i class="fa-solid fa-camera"></i>
+            </div>
+
+            <div>
+
+              <strong>
+                Photography
+              </strong>
+
+              <span>
+                Photography is welcome when it respects birds and their
+                natural behavior.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- Nature -->
+          <div class="info-item">
+
+            <div class="info-item-icon">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div>
+
+              <strong>
+                Respect Nature
+              </strong>
+
+              <span>
+                Please keep noise low and maintain a comfortable distance
+                from the birds.
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="info-divider"></div>
+
+
+        <!-- Tip -->
+        <div class="tip-box">
+
+          <strong>
+            <i class="fa-solid fa-lightbulb"></i>
+            Helpful Tip
+          </strong>
+
+          <p>
+            Comfortable walking shoes, water and weather-appropriate
+            clothing can make your visit more enjoyable.
+          </p>
+
+        </div>
+
+      </aside>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================= -->
+
+  <script>
+
+    /* =========================================
+       THEME
+    ========================================= */
+
+    const themeToggle =
+      document.getElementById("themeToggle");
+
+    const savedTheme =
+      localStorage.getItem("aviora-theme");
+
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+    }
+
+    function updateThemeIcon() {
+
+      const icon =
+        themeToggle.querySelector("i");
+
+      if (document.body.classList.contains("dark")) {
+
+        icon.className = "fa-solid fa-sun";
+
+        themeToggle.setAttribute(
+          "title",
+          "Switch to light mode"
+        );
+
+        themeToggle.setAttribute(
+          "aria-label",
+          "Switch to light mode"
+        );
+
+      } else {
+
+        icon.className = "fa-solid fa-moon";
+
+        themeToggle.setAttribute(
+          "title",
+          "Switch to dark mode"
+        );
+
+        themeToggle.setAttribute(
+          "aria-label",
+          "Switch to dark mode"
+        );
+
+      }
+
+    }
+
+    updateThemeIcon();
+
+    themeToggle.addEventListener("click", function () {
+
+      document.body.classList.toggle("dark");
+
+      const theme =
+        document.body.classList.contains("dark")
+          ? "dark"
+          : "light";
+
+      localStorage.setItem(
+        "aviora-theme",
+        theme
+      );
+
+      updateThemeIcon();
+
+    });
+
+
+    /* =========================================
+       RTL / LTR
+    ========================================= */
+
+    const directionToggle =
+      document.getElementById("directionToggle");
+
+    const savedDirection =
+      localStorage.getItem("aviora-direction");
+
+    if (savedDirection === "rtl") {
+      document.documentElement.setAttribute(
+        "dir",
+        "rtl"
+      );
+    } else {
+      document.documentElement.setAttribute(
+        "dir",
+        "ltr"
+      );
+    }
+
+    directionToggle.addEventListener(
+      "click",
+      function () {
+
+        const currentDirection =
+          document.documentElement.getAttribute("dir");
+
+        const newDirection =
+          currentDirection === "rtl"
+            ? "ltr"
+            : "rtl";
+
+        document.documentElement.setAttribute(
+          "dir",
+          newDirection
+        );
+
+        localStorage.setItem(
+          "aviora-direction",
+          newDirection
+        );
+
+      }
+    );
+
+
+    /* =========================================
+       MINIMUM DATE
+    ========================================= */
+
+    const visitDate =
+      document.getElementById("visitDate");
+
+    const today =
+      new Date();
+
+    const year =
+      today.getFullYear();
+
+    const month =
+      String(today.getMonth() + 1).padStart(2, "0");
+
+    const day =
+      String(today.getDate()).padStart(2, "0");
+
+    const formattedToday =
+      `${year}-${month}-${day}`;
+
+    visitDate.min = formattedToday;
+
+
+    /* =========================================
+       FORM SUBMISSION
+    ========================================= */
+
+    const bookingForm =
+      document.getElementById("bookingForm");
+
+    const successMessage =
+      document.getElementById("successMessage");
+
+    bookingForm.addEventListener(
+      "submit",
+      function (event) {
+
+        event.preventDefault();
+
+        successMessage.classList.add("show");
+
+        bookingForm.reset();
+
+        visitDate.min = formattedToday;
+
+        successMessage.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
