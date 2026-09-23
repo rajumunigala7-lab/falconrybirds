@@ -301,25 +301,28 @@ h4 {
   height: 30px;
 }
 
-.logo-text {
-  font-family: "Playfair Display", serif;
 
+   .logo-text {
+  font-family: "Playfair Display", serif;
   font-size: 27px;
   font-weight: 700;
-
   letter-spacing: -0.5px;
-
-  color: var(--text);
 }
 
-.logo-text span {
+.logo-text > span {
   color: var(--accent);
 }
 
-.footer .logo-text {
-  color: #ffffff;
+.logo-text small {
+  display: block;
+  margin-top: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
-
 
 /* =========================================================
    NAVIGATION
@@ -1989,8 +1992,9 @@ html[data-theme="dark"] .icon-btn:hover {
       </div>
 
       <div class="logo-text">
-        Avi<span>ora</span>
-      </div>
+  Avi<span>ora</span>
+  <small>Bird sanctuary</small>
+</div>
 
     </a>
 
@@ -3234,9 +3238,10 @@ html[data-theme="dark"] .icon-btn:hover {
 
             </span>
 
-            <span class="logo-text">
-              Avi<span>ora</span>
-            </span>
+            <div class="logo-text">
+  Avi<span>ora</span>
+  <small>Bird sanctuary</small>
+</div>
 
           </a>
 

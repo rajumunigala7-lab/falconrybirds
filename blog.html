@@ -228,17 +228,27 @@
       width: 30px;
       height: 30px;
     }
+.logo-text {
+  font-family: "Playfair Display", serif;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
 
-    .logo-text {
-      font-family: "Playfair Display", serif;
-      font-size: 27px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
+.logo-text > span {
+  color: var(--accent);
+}
 
-    .logo-text span {
-      color: var(--accent);
-    }
+.logo-text small {
+  display: block;
+  margin-top: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
     /* =========================
        NAVIGATION
@@ -1455,9 +1465,9 @@
         </div>
 
         <div class="logo-text">
-          Avi<span>ora</span>
-        </div>
-
+  Avi<span>ora</span>
+  <small>Bird sanctuary</small>
+</div>
       </a>
 
       <nav class="main-nav" id="mainNav">
@@ -2025,10 +2035,10 @@
 
             </span>
 
-            <span class="logo-text">
-              Avi<span>ora</span>
-            </span>
-
+            <div class="logo-text">
+  Avi<span>ora</span>
+  <small>Bird sanctuary</small>
+</div>
           </a>
 
           <p class="footer-description">
