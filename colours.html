@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>The Colorful World of Tropical Parrots — Aviora Bird Sanctuary</title>
+  <link rel="icon" type="image/png" href="imagess/Generated image 1.png">
 
   <meta
     name="description"
@@ -425,58 +426,79 @@
       display: none;
     }
 
-    /* =========================
-       BUTTONS
-    ========================= */
+    /* =========================================================
+   BUTTONS
+========================================================= */
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 50px;
-      padding: 0 22px;
-      border-radius: 12px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      transition: var(--transition);
-    }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    .btn-primary {
-      background: #1d5b49;
-      color: #ffffff;
-      border: 1px solid #1d5b49;
-      box-shadow: 0 10px 24px rgba(29, 91, 73, 0.18);
-    }
+  gap: 9px;
 
-    .btn-primary:hover {
-      background: #123c31;
-      border-color: #123c31;
-      color: #ffffff;
-      transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(29, 91, 73, 0.22);
-    }
+  min-height: 50px;
 
-    .btn-light {
-      background: #ffffff;
-      color: #123c31;
-      border: 1px solid #ffffff;
-    }
+  padding: 0 22px;
 
-    .btn-light:hover {
-      background: #f3f1e9;
-      color: #123c31;
-      border-color: #f3f1e9;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-    }
+  border-radius: 12px;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #ffffff;
+
+  border: 1px solid #1d5b49;
+
+  box-shadow:
+    0 10px 24px rgba(29, 91, 73, 0.18);
+}
+
+.btn-primary:hover {
+  background: var(--primary);
+  border-color: #123c31;
+
+  color: #ffffff;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 30px rgba(29, 91, 73, 0.22);
+}
+
+.btn-light {
+  background: var(--primary) ;
+  color: #ffffff;
+
+  border: 1px solid #123c31;
+}
+
+.btn-light:hover {
+  background:  var(--primary);
+  color: #ffffff;
+
+  border-color: #123c31;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12);
+}
 
     /* =========================================================
        ARTICLE HERO
     ========================================================= */
 
     .article-hero {
-      position: relative;
+      position: relative; 
+       min-height: 610px;
+        margin-top: 50px;
+
       padding: 95px 0 55px;
       overflow: hidden;
       background:
@@ -490,7 +512,8 @@
           rgba(213, 168, 75, 0.12),
           transparent 27%
         ),
-        var(--bg);
+        url("./imagess/Favorite\ bird_\ Flying\ peafowl_.jpg")
+        center / cover no-repeat;
     }
 
     .article-hero::before {
@@ -556,6 +579,7 @@
       letter-spacing: -2.5px;
       font-weight: 700;
       color: var(--text);
+      color: white;
     }
 
     .article-intro {
@@ -564,6 +588,7 @@
       color: var(--text-soft);
       font-size: 18px;
       line-height: 1.8;
+      color: white;
     }
 
     .article-meta {
@@ -575,12 +600,14 @@
       color: var(--text-soft);
       font-size: 13px;
       font-weight: 600;
+      color: white;
     }
 
     .article-meta span {
       display: inline-flex;
       align-items: center;
       gap: 7px;
+      color: white;
     }
 
     .article-meta i {
@@ -894,8 +921,9 @@
       gap: 8px;
       padding: 11px 15px;
       border-radius: 999px;
-      background: var(--accent);
-      color: var(--black);
+      background: var(--primary);
+      color: var(--white);
+      border: var(--primary);
       font-size: 12px;
       font-weight: 700;
       transition:
@@ -904,8 +932,9 @@
     }
 
     .sidebar-cta a:hover {
-      background: var(--accent-light);
+      background: var(--primary);
       transform: translateY(-2px);
+      border: var(--primary);
     }
 
     /* =========================================================
@@ -1193,18 +1222,20 @@
       flex-shrink: 0;
       padding: 12px 18px;
       border-radius: 999px;
-      background: var(--accent);
-      color: var(--black);
+      background: var(--primary);
+      color: var(--white);
       font-size: 12px;
       font-weight: 800;
       transition:
         background-color 0.25s ease,
         transform 0.25s ease;
+        border: var(--primary);
     }
 
     .newsletter-form button:hover {
-      background: var(--accent-light);
+      background: var(--primary);
       transform: translateY(-1px);
+      border: var(--primary);
     }
 
     
@@ -1934,16 +1965,7 @@
 
         <div class="article-hero-inner reveal">
 
-          <div class="breadcrumb">
-            <a href="blog.html">Aviora Journal</a>
-            <i class="fa-solid fa-chevron-right"></i>
-            <span>Birds</span>
-          </div>
-
-          <div class="article-category">
-            <i class="fa-solid fa-feather-pointed"></i>
-            Birds
-          </div>
+        
 
           <h1>
             The Colorful World of Tropical Parrots
@@ -2447,7 +2469,7 @@
 
         <div class="section-heading reveal">
 
-          <div class="eyebrow">
+          <div class="">
             Keep exploring
           </div>
 
@@ -2589,7 +2611,7 @@
 
           <div class="newsletter-copy">
 
-            <div class="eyebrow">
+            <div class="">
               Aviora Journal
             </div>
 

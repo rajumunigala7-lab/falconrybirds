@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Learning to Slow Down in Nature — Aviora Bird Sanctuary</title>
+  <link rel="icon" type="image/png" href="imagess/Generated image 1.png">
+
 
   <meta
     name="description"
@@ -445,14 +447,14 @@
     }
 
     .btn-primary {
-      background: #1d5b49;
+      background: var(--primary);
       color: #ffffff;
       border: 1px solid #1d5b49;
       box-shadow: 0 10px 24px rgba(29, 91, 73, 0.18);
     }
 
     .btn-primary:hover {
-      background: #123c31;
+      background: var(--primary);
       border-color: #123c31;
       color: #ffffff;
       transform: translateY(-3px);
@@ -460,13 +462,13 @@
     }
 
     .btn-light {
-      background: #ffffff;
-      color: #123c31;
+      background: var(--primary);
+      color:white;
       border: 1px solid #ffffff;
     }
 
     .btn-light:hover {
-      background: #f3f1e9;
+      background: var(--primary);
       color: #123c31;
       border-color: #f3f1e9;
       transform: translateY(-3px);
@@ -479,6 +481,8 @@
 
     .article-hero {
       position: relative;
+       min-height: 610px;
+        margin-top: 50px;
       padding: 95px 0 55px;
       overflow: hidden;
       background:
@@ -492,8 +496,10 @@
           rgba(213, 168, 75, 0.12),
           transparent 27%
         ),
-        var(--bg);
+        url("./imagess/Favorite\ bird_\ Flying\ peafowl_.jpg")
+        center / cover no-repeat;
     }
+    
 
     .article-hero::before {
       content: "";
@@ -558,6 +564,8 @@
       letter-spacing: -2.5px;
       font-weight: 700;
       color: var(--text);
+      color: white;
+
     }
 
     .article-intro {
@@ -566,6 +574,7 @@
       color: var(--text-soft);
       font-size: 18px;
       line-height: 1.8;
+       color: white;
     }
 
     .article-meta {
@@ -583,6 +592,7 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
+       color: white;
     }
 
     .article-meta i {
@@ -896,8 +906,8 @@
       gap: 8px;
       padding: 11px 15px;
       border-radius: 999px;
-      background: var(--accent);
-      color: var(--black);
+      background: var(--primary);
+      color: var(--white);
       font-size: 12px;
       font-weight: 700;
       transition:
@@ -906,7 +916,7 @@
     }
 
     .sidebar-cta a:hover {
-      background: var(--accent-light);
+      background: var(--primary);
       transform: translateY(-2px);
     }
 
@@ -1149,7 +1159,7 @@
     }
 
     .newsletter-copy .eyebrow {
-      color: var(--accent-light);
+      color: var(--primary);
     }
 
     .newsletter-copy h2 {
@@ -1195,17 +1205,19 @@
       flex-shrink: 0;
       padding: 12px 18px;
       border-radius: 999px;
-      background: var(--accent);
-      color: var(--black);
+      background: var(--primary);
+      border: var(--primary);
+      color: var(--white);
       font-size: 12px;
       font-weight: 800;
       transition:
-        background-color 0.25s ease,
-        transform 0.25s ease;
+      background-color 0.25s ease,
+       transform 0.25s ease;
     }
 
     .newsletter-form button:hover {
-      background: var(--accent-light);
+      background: var(--primary);
+      border: var(--primary);
       transform: translateY(-1px);
     }
 
@@ -1842,7 +1854,7 @@
       </div>
 
 
-      <a class="nav-link active" href="about.html">
+      <a class="nav-link " href="about.html">
         About
       </a>
 
@@ -1939,28 +1951,10 @@
 
         <div class="article-hero-inner reveal">
 
-          <div class="breadcrumb">
-
-            <a href="blog.html">
-              Aviora Journal
-            </a>
-
-            <i class="fa-solid fa-chevron-right"></i>
-
-            <span>
-              Nature
-            </span>
-
-          </div>
+      
 
 
-          <div class="article-category">
-
-            <i class="fa-solid fa-leaf"></i>
-
-            Nature
-
-          </div>
+          
 
 
           <h1>
@@ -2609,7 +2603,7 @@
 
         <div class="section-heading reveal">
 
-          <div class="eyebrow">
+          <div class="">
             Keep exploring
           </div>
 
@@ -2817,7 +2811,7 @@
 
           <div class="newsletter-copy">
 
-            <div class="eyebrow">
+            <div class="">
               Aviora Journal
             </div>
 

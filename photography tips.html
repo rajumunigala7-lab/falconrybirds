@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Five Simple Bird Photography Tips — Aviora Bird Sanctuary</title>
+  <link rel="icon" type="image/png" href="imagess/Generated image 1.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -466,10 +467,14 @@
 
     .article-hero {
       padding: 86px 0 55px;
+      min-height: 610px;
+      margin-top: 50px;
+     
       background:
         radial-gradient(circle at 10% 10%, rgba(63, 138, 112, 0.13), transparent 34%),
         radial-gradient(circle at 90% 20%, rgba(213, 168, 75, 0.10), transparent 30%),
-        var(--bg);
+        url("./imagess/Favorite\ bird_\ Flying\ peafowl_.jpg")
+        center / cover no-repeat;
     }
 
     .article-hero-inner {
@@ -523,6 +528,7 @@
       line-height: 1.04;
       letter-spacing: -2px;
       color: var(--text);
+      color: white;
     }
 
     .article-intro {
@@ -531,6 +537,7 @@
       color: var(--text-soft);
       font-size: 18px;
       line-height: 1.8;
+      color: white;
     }
 
     .article-meta {
@@ -549,6 +556,7 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
+      color: white;
     }
 
     .meta-dot {
@@ -1006,110 +1014,153 @@
       transform: translateX(-4px);
     }
 
-    /* =========================
-       CTA
-    ========================= */
+    /* =========================================================
+       NEWSLETTER
+    ========================================================= */
 
-    .article-cta {
+    .newsletter-section {
       padding: 90px 0;
-      background: var(--surface);
+
+      background: var(--bg);
     }
 
-    .cta-box {
+    .newsletter-box {
       position: relative;
+
       overflow: hidden;
-      padding: 60px;
+
+      padding: 55px;
+
       border-radius: var(--radius-lg);
+
       background:
-        radial-gradient(circle at 90% 10%, rgba(213,168,75,0.17), transparent 30%),
-        var(--primary);
+        radial-gradient(
+          circle at 100% 0,
+          rgba(213, 168, 75, 0.18),
+          transparent 32%
+        ),
+        var(--primary-dark);
+
       color: var(--white);
-      text-align: center;
-    }
 
-    .cta-box::before,
-    .cta-box::after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 50%;
-      pointer-events: none;
-    }
+      display: grid;
 
-    .cta-box::before {
-      width: 240px;
-      height: 240px;
-      right: -80px;
-      top: -120px;
-    }
+      grid-template-columns: 1fr 430px;
 
-    .cta-box::after {
-      width: 180px;
-      height: 180px;
-      left: -70px;
-      bottom: -100px;
-    }
+      gap: 50px;
 
-    .cta-box > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta-box h2 {
-      max-width: 700px;
-      margin: 0 auto 14px;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(32px, 4vw, 50px);
-      line-height: 1.15;
-    }
-
-    .cta-box p {
-      max-width: 650px;
-      margin: 0 auto 27px;
-      color: rgba(255,255,255,0.84);
-      font-size: 16px;
-    }
-
-    .cta-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      min-height: 48px;
-      display: inline-flex;
       align-items: center;
-      justify-content: center;
+    }
+
+    .newsletter-box::after {
+      content: "";
+
+      position: absolute;
+
+      width: 230px;
+      height: 230px;
+
+      border: 1px solid rgba(255,255,255,0.10);
+
+      border-radius: 50%;
+
+      right: -80px;
+      bottom: -110px;
+    }
+
+    .newsletter-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+    .newsletter-copy .eyebrow {
+      color: var(--accent-light);
+    }
+
+    .newsletter-copy h2 {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(30px, 4vw, 44px);
+
+      line-height: 1.15;
+
+      margin-bottom: 14px;
+    }
+
+    .newsletter-copy p {
+      max-width: 560px;
+
+      color: rgba(255,255,255,0.72);
+
+      font-size: 14px;
+    }
+
+    .newsletter-form {
+      position: relative;
+
+      z-index: 2;
+
+      display: flex;
+
       gap: 9px;
-      padding: 0 22px;
+
+      padding: 7px;
+
       border-radius: 999px;
-      font-size: 13px;
-      font-weight: 800;
-      transition: var(--transition);
+
+      background: rgba(255,255,255,0.09);
+
+      border: 1px solid rgba(255,255,255,0.13);
     }
 
-    .btn-primary {
-      background: var(--white);
-      color: var(--primary-dark);
-    }
+    .newsletter-form input {
+      min-width: 0;
 
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.16);
-    }
+      flex: 1;
 
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,0.45);
-      color: var(--white);
+      border: 0;
+
+      outline: 0;
+
       background: transparent;
+
+      padding: 0 15px;
+
+      color: #fff;
+
+      font-size: 13px;
     }
 
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.10);
-      transform: translateY(-3px);
+    .newsletter-form input::placeholder {
+      color: rgba(255,255,255,0.55);
     }
+
+    .newsletter-form button {
+      flex-shrink: 0;
+
+      padding: 12px 18px;
+
+      border-radius: 999px;
+
+      background: var(--primary);
+
+      color: var(--white);
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .newsletter-form button:hover {
+      background: var(--primary);
+
+      transform: translateY(-1px);
+    }
+
 
    
     /* =========================
@@ -1834,16 +1885,7 @@
     <section class="article-hero">
       <div class="container article-hero-inner reveal">
 
-        <div class="breadcrumb">
-          <a href="blog.html">Aviora Journal</a>
-          <i class="fa-solid fa-chevron-right"></i>
-          <span>Bird Photography</span>
-        </div>
-
-        <div class="article-category">
-          <i class="fa-solid fa-camera"></i>
-          Photography
-        </div>
+        
 
         <h1 class="article-title">
           Five Simple Bird Photography Tips
@@ -2330,38 +2372,66 @@
     </section>
 
 
-    <!-- =========================
-         CTA
-    ========================= -->
-    <section class="article-cta">
+    <!-- =====================================================
+         NEWSLETTER
+    ====================================================== -->
+
+    <section class="newsletter-section">
+
       <div class="container">
 
-        <div class="cta-box reveal">
+        <div class="newsletter-box reveal">
 
-          <h2>
-            See the living world through a different lens.
-          </h2>
 
-          <p>
-            Spend time with birds, explore natural habitats, and discover why
-            patient observation is at the heart of every Aviora experience.
-          </p>
+          <div class="newsletter-copy">
 
-          <div class="cta-actions">
-            <a href="experience.html" class="btn btn-primary">
-              <i class="fa-solid fa-feather-pointed"></i>
-              Explore Aviora
-            </a>
+            <div class="">
+              Aviora Journal
+            </div>
 
-            <a href="contact.html" class="btn btn-outline">
-              <i class="fa-regular fa-calendar-check"></i>
-              Plan Your Visit
-            </a>
+
+            <h2>
+              Stories worth looking up for.
+            </h2>
+
+
+            <p>
+              Get occasional stories about birds, conservation, nature and
+              life at Aviora delivered to your inbox.
+            </p>
+
           </div>
+
+
+          <form
+            class="newsletter-form"
+            id="newsletterForm"
+          >
+
+            <input
+              type="email"
+              id="newsletterEmail"
+              placeholder="Your email address"
+              aria-label="Your email address"
+              required
+            >
+
+
+            <button type="submit">
+
+              Subscribe
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+          </form>
+
 
         </div>
 
       </div>
+
     </section>
 
   </main>

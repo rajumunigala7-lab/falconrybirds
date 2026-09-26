@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Building Better Habitats for Wildlife — Aviora Bird Sanctuary</title>
+  <link rel="icon" type="image/png" href="imagess/Generated image 1.png">
 
   <meta
     name="description"
@@ -444,14 +445,14 @@
     }
 
     .btn-primary {
-      background: #1d5b49;
+      background: var(--primary);
       color: #ffffff;
       border: 1px solid #1d5b49;
       box-shadow: 0 10px 24px rgba(29, 91, 73, 0.18);
     }
 
     .btn-primary:hover {
-      background: #123c31;
+      background: var(--primary);
       border-color: #123c31;
       color: #ffffff;
       transform: translateY(-3px);
@@ -459,15 +460,15 @@
     }
 
     .btn-light {
-      background: #ffffff;
-      color: #123c31;
-      border: 1px solid #ffffff;
+      background: var(--primary);
+      color: #ffffff;
+      border: 1px solid var(--primary);
     }
 
     .btn-light:hover {
-      background: #f3f1e9;
-      color: #123c31;
-      border-color: #f3f1e9;
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
       transform: translateY(-3px);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
     }
@@ -479,6 +480,8 @@
 
     .article-hero {
       position: relative;
+      min-height: 610px;
+      margin-top: 50px;
 
       padding: 95px 0 55px;
 
@@ -495,7 +498,8 @@
           rgba(213, 168, 75, 0.12),
           transparent 27%
         ),
-        var(--bg);
+       url("./imagess/Favorite\ bird_\ Flying\ peafowl_.jpg")
+        center / cover no-repeat;
     }
 
     .article-hero::before {
@@ -589,6 +593,7 @@
       font-weight: 700;
 
       color: var(--text);
+      color: white;
     }
 
     .article-intro {
@@ -601,6 +606,7 @@
       font-size: 18px;
 
       line-height: 1.8;
+      color: white;
     }
 
     .article-meta {
@@ -623,6 +629,7 @@
       align-items: center;
 
       gap: 7px;
+      color: white;
     }
 
     .article-meta i {
@@ -1064,9 +1071,10 @@
 
       border-radius: 999px;
 
-      background: var(--accent);
+      background: var(--primary);
 
-      color: var(--black);
+      color: var(--white);
+      border: var(--primary);
 
       font-size: 12px;
 
@@ -1078,7 +1086,9 @@
     }
 
     .sidebar-cta a:hover {
-      background: var(--accent-light);
+      background: var(--primary);
+      color: white;
+     
 
       transform: translateY(-2px);
     }
@@ -1477,9 +1487,9 @@
 
       border-radius: 999px;
 
-      background: var(--accent);
+      background: var(--primary);
 
-      color: var(--black);
+      color: var(--white);
 
       font-size: 12px;
 
@@ -1491,7 +1501,7 @@
     }
 
     .newsletter-form button:hover {
-      background: var(--accent-light);
+      background: var(--primary);
 
       transform: translateY(-1px);
     }
@@ -2237,30 +2247,6 @@
         <div class="article-hero-inner reveal">
 
 
-          <div class="breadcrumb">
-
-            <a href="blog.html">
-              Aviora Journal
-            </a>
-
-            <i class="fa-solid fa-chevron-right"></i>
-
-            <span>
-              Conservation
-            </span>
-
-          </div>
-
-
-          <div class="article-category">
-
-            <i class="fa-solid fa-leaf"></i>
-
-            Conservation
-
-          </div>
-
-
           <h1>
             Building Better Habitats for Wildlife
           </h1>
@@ -2971,7 +2957,7 @@
 
         <div class="section-heading reveal">
 
-          <div class="eyebrow">
+          <div class="">
             Keep exploring
           </div>
 
@@ -3183,7 +3169,7 @@
 
           <div class="newsletter-copy">
 
-            <div class="eyebrow">
+            <div class="">
               Aviora Journal
             </div>
 

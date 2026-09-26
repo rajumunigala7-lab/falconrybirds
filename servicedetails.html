@@ -9,6 +9,7 @@
   >
 
   <title>Bird Watching | Aviora Bird Sanctuary</title>
+  <link rel="icon" type="image/png" href="imagess/Generated image 1.png">
 
   <meta
     name="description"
@@ -545,7 +546,7 @@ html[data-theme="dark"] .icon-btn:hover {
 }
 
 .btn-primary {
-  background: #1d5b49;
+  background: var(--primary-light);
   color: #ffffff;
 
   border: 1px solid #1d5b49;
@@ -555,7 +556,7 @@ html[data-theme="dark"] .icon-btn:hover {
 }
 
 .btn-primary:hover {
-  background: #123c31;
+  background: var(--primary-light);
   border-color: #123c31;
 
   color: #ffffff;
@@ -567,17 +568,17 @@ html[data-theme="dark"] .icon-btn:hover {
 }
 
 .btn-light {
-  background: #ffffff;
-  color: #123c31;
+  background: var(--primary);
+  color: white;
 
-  border: 1px solid #ffffff;
+  border: 1px solid var(--primary);
 }
 
 .btn-light:hover {
-  background: #f3f1e9;
+  background: var(--primary);
   color: #123c31;
 
-  border-color: #f3f1e9;
+  border-color: var(--primary);
 
   transform: translateY(-3px);
 
@@ -687,6 +688,7 @@ html[data-theme="dark"] .icon-btn:hover {
       line-height: 1.08;
 
       margin-bottom: 18px;
+      color: #ffffff;
     }
 
 
@@ -820,13 +822,14 @@ html[data-theme="dark"] .icon-btn:hover {
 
     .btn-primary {
 
-      background: var(--secondary);
+      background: var(--primary);
 
       color: #26311f;
     }
 
 
     .btn-primary:hover {
+      background: #123c31;
 
       transform:
         translateY(-2px);
@@ -1387,7 +1390,7 @@ html[data-theme="dark"] .icon-btn:hover {
       color:
         rgba(255,255,255,0.82);
     }
-
+ 
 
     /* =========================
        FOOTER
@@ -2118,10 +2121,7 @@ html[data-theme="dark"] .icon-btn:hover {
 
         <div class="banner-label">
 
-          <i
-            class="fa-solid fa-feather-pointed"
-          ></i>
-
+         
           Our Services Detalis
 
         </div>
@@ -2137,31 +2137,6 @@ html[data-theme="dark"] .icon-btn:hover {
           peaceful landscapes with a guided experience
           at Aviora Bird Sanctuary.
         </p>
-
-
-        <div class="breadcrumb">
-
-          <a href="index.html">
-            Home
-          </a>
-
-          <i
-            class="fa-solid fa-chevron-right"
-          ></i>
-
-          <a href="services.html">
-            Service Details
-          </a>
-
-          <i
-            class="fa-solid fa-chevron-right"
-          ></i>
-
-          <span>
-            Bird Watching
-          </span>
-
-        </div>
 
 
       </div>
