@@ -1984,6 +1984,2728 @@
         transition-duration: 0.01ms !important;
       }
     }
+   
+/* =========================================================
+   RESPONSIVE
+   Desktop : 1200px+
+   Laptop  : 992px - 1199px
+   Tablet  : 768px - 991px
+   Mobile  : 767px and below
+========================================================= */
+
+
+
+html {
+    overflow-x: hidden;
+    scroll-padding-top: 90px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    width: min(var(--container), calc(100% - 48px));
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   LAPTOP - 992px to 1199px
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .container {
+        width: calc(100% - 48px);
+        max-width: 1150px;
+    }
+
+    .header-inner {
+        min-height: 78px;
+    }
+
+    .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 0;
+    }
+
+    .mobile-menu-btn {
+        display: none !important;
+    }
+
+    .nav-link,
+    .dropdown-toggle {
+        padding-inline: 7px;
+        font-size: .80rem;
+    }
+
+    .header-actions {
+        gap: 5px;
+    }
+
+    .login-btn {
+        padding-inline: 12px;
+    }
+
+    /* Hero */
+    .service-banner {
+        min-height: 600px;
+    }
+
+    .service-banner-content {
+        max-width: 680px;
+        padding: 100px 0 80px;
+    }
+
+    .service-banner h1 {
+        font-size: clamp(3.2rem, 6vw, 4.4rem);
+    }
+
+    /* Sections */
+    .section {
+        padding: 95px 0;
+    }
+
+    /* Intro */
+    .intro-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .intro-image img {
+        height: 500px;
+    }
+
+    /* Features */
+    .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .feature-card {
+        padding: 26px;
+    }
+
+    /* Experience */
+    .experience-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .experience-image img {
+        height: 500px;
+    }
+
+    /* Info */
+    .info-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .info-card {
+        padding: 22px;
+    }
+
+    /* Booking */
+    .booking-box {
+        padding: 50px;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+        gap: 30px;
+    }
+}
+
+
+/* =========================================================
+   TABLET - 768px to 991px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .container {
+        width: calc(100% - 48px);
+        max-width: 920px;
+    }
+
+    .header-inner {
+        min-height: 76px;
+    }
+
+    /* -------------------------
+       TABLET NAVIGATION
+    ------------------------- */
+
+    .main-nav {
+        position: fixed;
+        top: 88px;
+        left: 24px;
+        right: 24px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 4px;
+        padding: 14px;
+
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-12px);
+
+        z-index: 9999;
+        transition: var(--transition);
+    }
+
+    .main-nav.mobile-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-link,
+    .dropdown-toggle {
+        width: 100%;
+        min-height: 48px;
+        justify-content: space-between;
+        padding: 12px 15px;
+        border-radius: 11px;
+    }
+
+    .mobile-menu-btn {
+        display: grid;
+    }
+
+    /* Dropdown */
+    .dropdown-menu {
+        position: static;
+        display: none;
+
+        width: 100%;
+        margin: 3px 0 5px;
+        padding: 5px;
+
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown.open:hover .dropdown-menu {
+        display: block;
+    }
+
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    /* -------------------------
+       HERO
+    ------------------------- */
+
+    .service-banner {
+        min-height: 560px;
+    }
+
+    .service-banner-content {
+        padding: 95px 0 75px;
+        max-width: 650px;
+    }
+
+    .service-banner h1 {
+        font-size: clamp(3rem, 7vw, 4rem);
+    }
+
+    .service-banner p {
+        font-size: 1rem;
+    }
+
+    /* -------------------------
+       SECTIONS
+    ------------------------- */
+
+    .section {
+        padding: 85px 0;
+    }
+
+    /* Intro - 2 columns */
+    .intro-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .intro-image img {
+        height: 440px;
+    }
+
+    /* Features - 2 columns */
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .feature-card {
+        padding: 25px;
+    }
+
+    /* Experience - 2 columns */
+    .experience-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .experience-image img {
+        height: 460px;
+    }
+
+    /* Info - 2 columns */
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    /* Timeline */
+    .timeline {
+        max-width: 760px;
+    }
+
+    /* -------------------------
+       BOOKING
+    ------------------------- */
+
+    .booking-section {
+        padding: 80px 0;
+    }
+
+    .booking-box {
+        padding: 45px 38px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .booking-box .btn {
+        width: auto;
+    }
+
+    /* -------------------------
+       FOOTER
+    ------------------------- */
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 38px 28px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================================
+   MOBILE - 767px and below
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .container {
+        width: calc(100% - 32px);
+        max-width: none;
+    }
+
+    /* -------------------------
+       HEADER
+    ------------------------- */
+
+    .header-inner {
+        min-height: 70px;
+        gap: 10px;
+    }
+
+    .logo {
+        min-width: 0;
+        gap: 8px;
+    }
+
+    .logo-mark {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-mark svg {
+        width: 27px;
+        height: 27px;
+    }
+
+    .logo-text {
+        font-size: 1.45rem;
+        white-space: nowrap;
+    }
+
+    .logo-text small {
+        font-size: .54rem;
+        letter-spacing: 1.5px;
+    }
+
+    .header-actions {
+        margin-left: auto;
+        gap: 5px;
+    }
+
+    .icon-btn {
+        width: 37px;
+        height: 37px;
+    }
+
+    /* Login icon only */
+    .login-btn {
+        width: 37px;
+        height: 37px;
+        padding: 0;
+
+        display: grid;
+        place-items: center;
+
+        border-radius: 10px;
+    }
+
+    .login-btn span {
+        display: none;
+    }
+
+    /* -------------------------
+       MOBILE NAV
+    ------------------------- */
+
+    .main-nav {
+        position: fixed;
+
+        top: 78px;
+        left: 16px;
+        right: 16px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 3px;
+        padding: 12px;
+
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+
+        z-index: 9999;
+        transition: var(--transition);
+    }
+
+    .main-nav.mobile-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-link,
+    .dropdown-toggle {
+        width: 100%;
+        min-height: 46px;
+
+        justify-content: space-between;
+
+        padding: 12px 13px;
+        border-radius: 10px;
+    }
+
+    .mobile-menu-btn {
+        display: grid;
+    }
+
+    /* -------------------------
+       MOBILE DROPDOWN
+    ------------------------- */
+
+    .dropdown-menu {
+        position: static;
+        display: none;
+
+        width: 100%;
+        margin: 3px 0 5px;
+        padding: 5px;
+
+        box-shadow: none;
+        border-radius: 10px;
+
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown.open:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown.open .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+
+    /* -------------------------
+       HERO
+    ------------------------- */
+
+    .service-banner {
+        min-height: 520px;
+        display: flex;
+        align-items: center;
+    }
+
+    .service-banner-content {
+        padding: 90px 0 65px;
+        max-width: 100%;
+    }
+
+    .banner-label {
+        font-size: .72rem;
+        letter-spacing: 1.5px;
+    }
+
+    .service-banner h1 {
+        font-size: clamp(2.6rem, 11vw, 4rem);
+        line-height: 1.02;
+    }
+
+    .service-banner p {
+        font-size: .95rem;
+        line-height: 1.7;
+    }
+
+    /* -------------------------
+       SECTIONS
+    ------------------------- */
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 38px;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 9vw, 3rem);
+    }
+
+    .section-description,
+    .intro-text {
+        font-size: .94rem;
+        line-height: 1.75;
+    }
+
+    /* -------------------------
+       INTRO
+    ------------------------- */
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .intro-image img {
+        height: 380px;
+    }
+
+    .image-badge {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+
+        max-width: calc(100% - 28px);
+
+        padding: 11px 14px;
+        font-size: .82rem;
+    }
+
+    .intro-grid .btn {
+        width: 100%;
+    }
+
+    /* -------------------------
+       FEATURES
+    ------------------------- */
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .feature-card {
+        padding: 24px 20px;
+    }
+
+    .feature-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 17px;
+    }
+
+    /* -------------------------
+       EXPERIENCE
+    ------------------------- */
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .experience-image img {
+        height: 380px;
+        border-radius: 20px;
+    }
+
+    .experience-list {
+        margin-top: 20px;
+    }
+
+    .experience-list li {
+        gap: 11px;
+        padding: 12px 0;
+        font-size: .92rem;
+    }
+
+    /* -------------------------
+       ITINERARY TIMELINE
+    ------------------------- */
+
+    .timeline {
+        max-width: none;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .timeline-number {
+        width: 42px;
+        height: 42px;
+        font-size: .78rem;
+    }
+
+    .timeline-content {
+        padding: 18px;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .timeline-content p {
+        font-size: .9rem;
+        line-height: 1.65;
+    }
+
+    /* -------------------------
+       INFORMATION CARDS
+    ------------------------- */
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .info-card {
+        padding: 22px 20px;
+    }
+
+    /* -------------------------
+       FAQ
+    ------------------------- */
+
+    .faq-question {
+        padding: 17px;
+        gap: 12px;
+        font-size: .92rem;
+    }
+
+    .faq-answer {
+        padding: 0 17px 17px;
+        font-size: .9rem;
+        line-height: 1.65;
+    }
+
+    /* -------------------------
+       BOOKING
+    ------------------------- */
+
+    .booking-section {
+        padding: 70px 0;
+    }
+
+    .booking-box {
+        padding: 35px 22px;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 24px;
+        border-radius: 20px;
+    }
+
+    .booking-box h2 {
+        font-size: clamp(2rem, 9vw, 2.7rem);
+    }
+
+    .booking-box p {
+        font-size: .92rem;
+        line-height: 1.7;
+    }
+
+    .booking-box .btn {
+        width: 100%;
+    }
+
+   
+    /* ================= FOOTER ================= */
+
+    .site-footer {
+        padding: 55px 0 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-description {
+        margin-inline: auto;
+        font-size: .82rem;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
+
+    .footer-links {
+        justify-items: center;
+    }
+
+    .footer-contact {
+        justify-items: center;
+    }
+
+    .footer-contact-item {
+        justify-content: center;
+        text-align: start;
+        font-size: .80rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .footer-bottom-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    /* -------------------------
+       LOGIN MODAL
+    ------------------------- */
+.modal-backdrop {
+        padding: 14px;
+    }
+
+    .modal {
+        width: 100%;
+        max-width: 420px;
+        padding: 22px 18px;
+        border-radius: 18px;
+    }
+
+    .modal-header {
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.65rem;
+    }
+
+    /* -------------------------
+       TOAST
+    ------------------------- */
+
+    .toast {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+
+        min-width: 0;
+        max-width: none;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE - 380px and below
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .header-inner {
+        min-height: 66px;
+    }
+
+    .logo-mark {
+        width: 36px;
+        height: 36px;
+    }
+
+    .logo-mark svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+
+    .logo-text small {
+        font-size: .48rem;
+    }
+
+    .header-actions {
+        gap: 3px;
+    }
+
+    .icon-btn,
+    .login-btn {
+        width: 34px;
+        height: 34px;
+    }
+
+    .main-nav {
+        top: 72px;
+        left: 12px;
+        right: 12px;
+        padding: 10px;
+    }
+
+    .service-banner {
+        min-height: 480px;
+    }
+
+    .service-banner-content {
+        padding: 78px 0 55px;
+    }
+
+    .service-banner h1 {
+        font-size: 2.55rem;
+    }
+
+    .service-banner p {
+        font-size: .9rem;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .intro-image img,
+    .experience-image img {
+        height: 320px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .feature-card,
+    .info-card {
+        padding: 20px 17px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .timeline::before {
+        left: 18px;
+    }
+
+    .timeline-number {
+        width: 38px;
+        height: 38px;
+        font-size: .72rem;
+    }
+
+    .timeline-content {
+        padding: 16px;
+    }
+
+    .booking-box {
+        padding: 28px 18px;
+    }
+}
+
+
+/* =========================================================
+   RTL SUPPORT
+========================================================= */
+
+html[dir="rtl"] .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .footer-links a:hover {
+    transform: translateX(-3px);
+}
+
+html[dir="rtl"] .timeline::before {
+    left: auto;
+    right: 20px;
+}
+
+html[dir="rtl"] .timeline-item {
+    grid-template-columns: minmax(0, 1fr) 42px;
+}
+
+html[dir="rtl"] .timeline-number {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+html[dir="rtl"] .timeline-content {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"] .image-badge {
+    background: rgba(25, 33, 27, .95);
+    color: #fff;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.nav-link:focus-visible,
+.dropdown-toggle:focus-visible,
+.icon-btn:focus-visible,
+.login-btn:focus-visible,
+.btn:focus-visible,
+.faq-question:focus-visible,
+.modal-close:focus-visible {
+    outline: 3px solid var(--accent-light);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+   DESKTOP : 1200px+
+   LAPTOP  : 992px - 1199px
+   TABLET  : 768px - 991px
+   MOBILE  : 767px and below
+========================================================= */
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+html {
+    overflow-x: hidden;
+    scroll-padding-top: 90px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: min(var(--container), calc(100% - 48px));
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   DESKTOP - 1200px+
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    /* Header */
+    .header-inner {
+        min-height: 82px;
+    }
+
+    .main-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .mobile-menu-btn {
+        display: none !important;
+    }
+
+
+    /* =========================
+       SCHOOL HERO
+    ========================= */
+
+    .school-hero {
+        min-height: 680px;
+        display: flex;
+        align-items: center;
+    }
+
+    .school-hero-content {
+        max-width: 760px;
+        padding: 120px 0 100px;
+    }
+
+    .school-hero h1 {
+        font-size: clamp(4rem, 6vw, 5.4rem);
+        line-height: 1.02;
+    }
+
+    .school-hero p {
+        max-width: 680px;
+        font-size: 1.08rem;
+        line-height: 1.8;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 30px;
+    }
+
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .program-intro {
+        padding: 110px 0;
+    }
+
+    .intro-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 70px;
+    }
+
+    .intro-image {
+        position: relative;
+    }
+
+    .intro-image img {
+        width: 100%;
+        height: 540px;
+        object-fit: cover;
+        border-radius: 24px;
+    }
+
+    .intro-copy {
+        min-width: 0;
+    }
+
+    .intro-points {
+        margin: 30px 0;
+    }
+
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .program-stats {
+        padding: 70px 0;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+
+    .stat-card {
+        min-width: 0;
+        padding: 30px 24px;
+    }
+
+
+    /* =========================
+       PROGRAM CARDS
+    ========================= */
+
+    .program-types {
+        padding: 110px 0;
+    }
+
+    .program-cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 26px;
+    }
+
+    .program-card {
+        min-width: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .program-card-image {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .program-card-image img {
+        width: 100%;
+        height: 270px;
+        object-fit: cover;
+    }
+
+    .program-card-content {
+        flex: 1;
+        padding: 28px;
+    }
+
+
+    /* =========================
+       LEARNING
+    ========================= */
+
+    .learning-section {
+        padding: 110px 0;
+    }
+
+    .learning-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 70px;
+    }
+
+    .learning-visual {
+        position: relative;
+    }
+
+    .learning-visual > img {
+        width: 100%;
+        height: 560px;
+        object-fit: cover;
+        border-radius: 24px;
+    }
+
+    .learning-copy {
+        min-width: 0;
+    }
+
+
+    /* =========================
+       HOW IT WORKS
+    ========================= */
+
+    .how-section {
+        padding: 110px 0;
+    }
+
+    .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+
+    .step {
+        min-width: 0;
+    }
+
+
+    /* =========================
+       VISIT
+    ========================= */
+
+    .visit-section {
+        padding: 110px 0;
+    }
+
+    .visit-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(380px, .75fr);
+        align-items: stretch;
+        gap: 70px;
+    }
+
+    .visit-copy {
+        min-width: 0;
+    }
+
+    .visit-card {
+        min-height: 420px;
+    }
+
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq-section {
+        padding: 110px 0;
+    }
+
+    .faq-wrap {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .school-cta {
+        padding: 110px 0;
+    }
+
+    .cta-box {
+        min-height: 430px;
+        padding: 70px;
+        display: flex;
+        align-items: center;
+    }
+
+    .cta-content {
+        max-width: 700px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer-grid {
+        grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+        gap: 55px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP - 992px to 1199px
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .container {
+        width: calc(100% - 48px);
+        max-width: 1150px;
+    }
+
+    /* Header */
+    .header-inner {
+        min-height: 78px;
+    }
+
+    .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 0;
+    }
+
+    .mobile-menu-btn {
+        display: none !important;
+    }
+
+    .nav-link,
+    .dropdown-toggle {
+        padding-inline: 7px;
+        font-size: .80rem;
+    }
+
+    .header-actions {
+        gap: 5px;
+    }
+
+    .login-btn {
+        padding-inline: 12px;
+    }
+
+
+    /* Hero */
+    .school-hero {
+        min-height: 600px;
+    }
+
+    .school-hero-content {
+        max-width: 680px;
+        padding: 100px 0 80px;
+    }
+
+    .school-hero h1 {
+        font-size: clamp(3.3rem, 6vw, 4.5rem);
+    }
+
+    .school-hero p {
+        font-size: 1rem;
+    }
+
+
+    /* Intro */
+    .program-intro {
+        padding: 95px 0;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .intro-image img {
+        height: 500px;
+    }
+
+
+    /* Stats */
+    .program-stats {
+        padding: 65px 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+
+    .stat-card {
+        padding: 25px 18px;
+    }
+
+
+    /* Programs */
+    .program-types {
+        padding: 95px 0;
+    }
+
+    .program-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .program-card-image img {
+        height: 240px;
+    }
+
+    .program-card-content {
+        padding: 24px;
+    }
+
+
+    /* Learning */
+    .learning-section {
+        padding: 95px 0;
+    }
+
+    .learning-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .learning-visual > img {
+        height: 500px;
+    }
+
+
+    /* Steps */
+    .how-section {
+        padding: 95px 0;
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+    }
+
+
+    /* Visit */
+    .visit-section {
+        padding: 95px 0;
+    }
+
+    .visit-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 45px;
+    }
+
+
+    /* FAQ */
+    .faq-section {
+        padding: 95px 0;
+    }
+
+    .faq-wrap {
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+
+    /* CTA */
+    .school-cta {
+        padding: 95px 0;
+    }
+
+    .cta-box {
+        padding: 55px;
+    }
+
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+        gap: 30px;
+    }
+}
+
+
+/* =========================================================
+   TABLET - 768px to 991px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .container {
+        width: calc(100% - 48px);
+        max-width: 920px;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .header-inner {
+        min-height: 76px;
+    }
+
+    .main-nav {
+        position: fixed;
+
+        top: 88px;
+        left: 24px;
+        right: 24px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 4px;
+        padding: 14px;
+
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-12px);
+
+        z-index: 9999;
+        transition: var(--transition);
+    }
+
+    .main-nav.mobile-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-link,
+    .dropdown-toggle {
+        width: 100%;
+        min-height: 48px;
+        justify-content: space-between;
+        padding: 12px 15px;
+        border-radius: 11px;
+    }
+
+    .mobile-menu-btn {
+        display: grid;
+    }
+
+
+    /* Dropdown */
+    .dropdown-menu {
+        position: static;
+        display: none;
+
+        width: 100%;
+        margin: 3px 0 5px;
+        padding: 5px;
+
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown.open:hover .dropdown-menu {
+        display: block;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .school-hero {
+        min-height: 560px;
+    }
+
+    .school-hero-content {
+        max-width: 650px;
+        padding: 95px 0 75px;
+    }
+
+    .school-hero h1 {
+        font-size: clamp(3rem, 7vw, 4.2rem);
+    }
+
+    .school-hero p {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .program-intro {
+        padding: 85px 0;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .intro-image img {
+        height: 430px;
+    }
+
+    .intro-copy {
+        min-width: 0;
+    }
+
+    .intro-points {
+        margin: 25px 0;
+    }
+
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .program-stats {
+        padding: 60px 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .stat-card {
+        padding: 25px 20px;
+    }
+
+
+    /* =========================
+       PROGRAM CARDS
+    ========================= */
+
+    .program-types {
+        padding: 85px 0;
+    }
+
+    .program-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .program-card-image img {
+        height: 240px;
+    }
+
+    .program-card-content {
+        padding: 24px 20px;
+    }
+
+
+    /* =========================
+       LEARNING
+    ========================= */
+
+    .learning-section {
+        padding: 85px 0;
+    }
+
+    .learning-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .learning-visual > img {
+        height: 450px;
+    }
+
+    .learning-quote {
+        padding: 20px;
+    }
+
+    .learning-item {
+        gap: 15px;
+    }
+
+
+    /* =========================
+       STEPS
+    ========================= */
+
+    .how-section {
+        padding: 85px 0;
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+
+    /* =========================
+       VISIT
+    ========================= */
+
+    .visit-section {
+        padding: 85px 0;
+    }
+
+    .visit-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .visit-card {
+        min-height: 360px;
+    }
+
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq-section {
+        padding: 85px 0;
+    }
+
+    .faq-wrap {
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .school-cta {
+        padding: 80px 0;
+    }
+
+    .cta-box {
+        padding: 45px 38px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 38px 28px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE - 767px and below
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .container {
+        width: calc(100% - 32px);
+        max-width: none;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .header-inner {
+        min-height: 70px;
+        gap: 10px;
+    }
+
+    .logo {
+        min-width: 0;
+        gap: 8px;
+    }
+
+    .logo-mark {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-mark svg {
+        width: 27px;
+        height: 27px;
+    }
+
+    .logo-text {
+        font-size: 1.45rem;
+        white-space: nowrap;
+    }
+
+    .logo-text small {
+        font-size: .54rem;
+        letter-spacing: 1.5px;
+    }
+
+    .header-actions {
+        margin-left: auto;
+        gap: 5px;
+    }
+
+    .icon-btn {
+        width: 37px;
+        height: 37px;
+    }
+
+    .login-btn {
+        width: 37px;
+        height: 37px;
+        padding: 0;
+
+        display: grid;
+        place-items: center;
+
+        border-radius: 10px;
+    }
+
+    .login-btn span {
+        display: none;
+    }
+
+
+    /* =========================
+       MOBILE NAV
+    ========================= */
+
+    .main-nav {
+        position: fixed;
+
+        top: 78px;
+        left: 16px;
+        right: 16px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 3px;
+        padding: 12px;
+
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+
+        z-index: 9999;
+        transition: var(--transition);
+    }
+
+    .main-nav.mobile-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-link,
+    .dropdown-toggle {
+        width: 100%;
+        min-height: 46px;
+        justify-content: space-between;
+        padding: 12px 13px;
+        border-radius: 10px;
+    }
+
+    .mobile-menu-btn {
+        display: grid;
+    }
+
+
+    /* =========================
+       MOBILE DROPDOWN
+    ========================= */
+
+    .dropdown-menu {
+        position: static;
+        display: none;
+
+        width: 100%;
+        margin: 3px 0 5px;
+        padding: 5px;
+
+        box-shadow: none;
+        border-radius: 10px;
+
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown.open:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown.open .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+
+
+    /* =========================
+       SCHOOL HERO
+    ========================= */
+
+    .school-hero {
+        min-height: 520px;
+        display: flex;
+        align-items: center;
+    }
+
+    .school-hero-content {
+        width: 100%;
+        max-width: none;
+        padding: 90px 0 65px;
+    }
+
+    .eyebrow {
+        font-size: .72rem;
+        letter-spacing: 1.5px;
+    }
+
+    .school-hero h1 {
+        font-size: clamp(2.6rem, 11vw, 4rem);
+        line-height: 1.04;
+    }
+
+    .school-hero p {
+        font-size: .95rem;
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        margin-top: 25px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .program-intro {
+        padding: 70px 0;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .intro-image img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    .intro-badge {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        max-width: calc(100% - 24px);
+    }
+
+    .intro-copy {
+        width: 100%;
+    }
+
+    .intro-copy .section-title {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+    }
+
+    .intro-copy > p {
+        font-size: .94rem;
+        line-height: 1.75;
+    }
+
+    .intro-points {
+        margin: 25px 0;
+    }
+
+    .intro-point {
+        gap: 10px;
+        align-items: flex-start;
+        font-size: .9rem;
+        line-height: 1.6;
+    }
+
+    .intro-copy > .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .program-stats {
+        padding: 55px 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 22px 15px;
+        text-align: center;
+    }
+
+    .stat-icon {
+        width: 46px;
+        height: 46px;
+        margin: 0 auto 13px;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .stat-card p {
+        font-size: .78rem;
+        line-height: 1.5;
+    }
+
+
+    /* =========================
+       PROGRAM TYPES
+    ========================= */
+
+    .program-types {
+        padding: 70px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 9vw, 3rem);
+        line-height: 1.1;
+    }
+
+    .section-description {
+        font-size: .93rem;
+        line-height: 1.7;
+    }
+
+    .program-cards {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .program-card {
+        width: 100%;
+    }
+
+    .program-card-image img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+    }
+
+    .program-card-content {
+        padding: 23px 20px;
+    }
+
+    .program-card-content h3 {
+        font-size: 1.35rem;
+    }
+
+    .program-card-content p {
+        font-size: .9rem;
+        line-height: 1.65;
+    }
+
+    .program-features {
+        gap: 9px;
+    }
+
+    .program-feature {
+        font-size: .86rem;
+        line-height: 1.5;
+    }
+
+
+    /* =========================
+       LEARNING
+    ========================= */
+
+    .learning-section {
+        padding: 70px 0;
+    }
+
+    .learning-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .learning-visual > img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    .learning-quote {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+
+        max-width: calc(100% - 24px);
+        padding: 18px;
+    }
+
+    .learning-quote p {
+        font-size: .88rem;
+        line-height: 1.55;
+    }
+
+    .learning-copy .section-title {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+    }
+
+    .learning-copy > p {
+        font-size: .93rem;
+        line-height: 1.7;
+    }
+
+    .learning-list {
+        margin-top: 25px;
+    }
+
+    .learning-item {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 13px;
+        padding: 17px 0;
+    }
+
+    .learning-number {
+        width: 42px;
+        height: 42px;
+        font-size: .78rem;
+    }
+
+    .learning-item h4 {
+        font-size: 1rem;
+    }
+
+    .learning-item p {
+        font-size: .86rem;
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       HOW IT WORKS
+    ========================= */
+
+    .how-section {
+        padding: 70px 0;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .step {
+        padding: 23px 20px;
+    }
+
+    .step-number {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 15px;
+    }
+
+    .step h4 {
+        font-size: 1.05rem;
+    }
+
+    .step p {
+        font-size: .88rem;
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       VISIT
+    ========================= */
+
+    .visit-section {
+        padding: 70px 0;
+    }
+
+    .visit-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .visit-copy .section-title {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+    }
+
+    .visit-copy > p {
+        font-size: .93rem;
+        line-height: 1.7;
+    }
+
+    .visit-details {
+        margin: 25px 0;
+    }
+
+    .visit-detail {
+        gap: 11px;
+        padding: 12px 0;
+        font-size: .9rem;
+        line-height: 1.55;
+    }
+
+    .visit-copy > .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .visit-card {
+        min-height: 300px;
+        padding: 25px;
+    }
+
+    .visit-card-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .visit-card-content p {
+        font-size: .9rem;
+        line-height: 1.65;
+    }
+
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq-section {
+        padding: 70px 0;
+    }
+
+    .faq-wrap {
+        width: 100%;
+    }
+
+    .faq-question {
+        width: 100%;
+        padding: 17px 15px;
+        gap: 12px;
+        text-align: left;
+        font-size: .9rem;
+        line-height: 1.5;
+    }
+
+    .faq-question i {
+        flex-shrink: 0;
+    }
+
+    .faq-answer {
+        padding: 0 15px 17px;
+    }
+
+    .faq-answer p {
+        font-size: .87rem;
+        line-height: 1.65;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .school-cta {
+        padding: 70px 0;
+    }
+
+    .cta-box {
+        min-height: auto;
+        padding: 35px 22px;
+        border-radius: 20px;
+    }
+
+    .cta-content {
+        max-width: 100%;
+    }
+
+    .cta-content h2 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+        line-height: 1.1;
+    }
+
+    .cta-content p {
+        font-size: .91rem;
+        line-height: 1.7;
+    }
+
+    .cta-content .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding-bottom: 40px;
+    }
+
+    .footer-description {
+        max-width: 100%;
+        font-size: .9rem;
+        line-height: 1.7;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 13px;
+    }
+
+    .footer-bottom-links {
+        flex-wrap: wrap;
+        gap: 10px 16px;
+    }
+
+
+    /* =========================
+       MODAL
+    ========================= */
+
+    .modal-backdrop {
+        padding: 12px;
+    }
+
+    .modal {
+        width: 100%;
+        max-width: 100%;
+        padding: 25px 19px;
+        border-radius: 18px;
+    }
+
+    .modal-header {
+        gap: 12px;
+        margin-bottom: 22px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.7rem;
+    }
+
+
+    /* =========================
+       TOAST
+    ========================= */
+
+    .toast {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        min-width: 0;
+        max-width: none;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE - 380px and below
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .header-inner {
+        min-height: 66px;
+    }
+
+    .logo-mark {
+        width: 36px;
+        height: 36px;
+    }
+
+    .logo-mark svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+
+    .logo-text small {
+        font-size: .48rem;
+    }
+
+    .header-actions {
+        gap: 3px;
+    }
+
+    .icon-btn,
+    .login-btn {
+        width: 34px;
+        height: 34px;
+    }
+
+    .main-nav {
+        top: 72px;
+        left: 12px;
+        right: 12px;
+        padding: 10px;
+    }
+
+
+    /* Hero */
+    .school-hero {
+        min-height: 480px;
+    }
+
+    .school-hero-content {
+        padding: 78px 0 55px;
+    }
+
+    .school-hero h1 {
+        font-size: 2.55rem;
+    }
+
+    .school-hero p {
+        font-size: .88rem;
+    }
+
+
+    /* Stats */
+    .stats-grid {
+        gap: 9px;
+    }
+
+    .stat-card {
+        padding: 18px 10px;
+    }
+
+    .stat-number {
+        font-size: 1.55rem;
+    }
+
+    .stat-card p {
+        font-size: .72rem;
+    }
+
+
+    /* Images */
+    .intro-image img,
+    .learning-visual > img {
+        height: 310px;
+    }
+
+
+    /* Program cards */
+    .program-card-image img {
+        height: 210px;
+    }
+
+    .program-card-content {
+        padding: 20px 17px;
+    }
+
+
+    /* Learning */
+    .learning-item {
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .learning-number {
+        width: 38px;
+        height: 38px;
+        font-size: .72rem;
+    }
+
+
+    /* Visit */
+    .visit-card {
+        min-height: 270px;
+        padding: 21px;
+    }
+
+
+    /* CTA */
+    .cta-box {
+        padding: 28px 18px;
+    }
+}
+
+
+/* =========================================================
+   RTL
+========================================================= */
+
+html[dir="rtl"] .faq-question {
+    text-align: right;
+}
+
+html[dir="rtl"] .learning-item {
+    direction: rtl;
+}
+
+html[dir="rtl"] .visit-detail {
+    direction: rtl;
+}
+
+html[dir="rtl"] .program-feature {
+    direction: rtl;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.nav-link:focus-visible,
+.dropdown-toggle:focus-visible,
+.icon-btn:focus-visible,
+.login-btn:focus-visible,
+.btn:focus-visible,
+.faq-question:focus-visible,
+.modal-close:focus-visible {
+    outline: 3px solid var(--accent-light);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* =========================================
+   FOOTER BOTTOM - DESKTOP
+========================================= */
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.footer-bottom-links a {
+  color: var(--text-soft);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.25s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--accent);
+}
+
+
+/* =========================================
+   TABLET VIEW
+   768px - 991px
+========================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .footer-bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 20px 0;
+  }
+
+  .footer-bottom p {
+    font-size: 0.85rem;
+  }
+
+  .footer-bottom-links {
+    gap: 18px;
+  }
+
+  .footer-bottom-links a {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* =========================================
+   MOBILE VIEW
+   0px - 767px
+========================================= */
+
+@media (max-width: 767px) {
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+    padding: 20px 0;
+  }
+
+  .footer-bottom p {
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 18px;
+  }
+
+  .footer-bottom-links a {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   380px and below
+========================================= */
+
+@media (max-width: 380px) {
+
+  .footer-bottom {
+    gap: 10px;
+    padding: 18px 0;
+  }
+
+  .footer-bottom p {
+    font-size: 0.75rem;
+  }
+
+  .footer-bottom-links {
+    gap: 7px 14px;
+  }
+
+  .footer-bottom-links a {
+    font-size: 0.75rem;
+  }
+}
+
+
   </style>
 </head>
 
@@ -2088,15 +4810,17 @@
           <i class="fa-solid fa-moon"></i>
         </button>
 
-        <!-- LOGIN -->
-        <button
-          class="login-btn"
-          id="loginOpen"
-          type="button"
-        >
-          <i class="fa-regular fa-user"></i>
-          <span>Login</span>
-        </button>
+       <!-- LOGIN -->
+        <a href="cta.html"
+               class="login-btn">
+ 
+                <i class="fa-solid fa-user"></i>
+ 
+                <span>
+                    Login
+                </span>
+ 
+            </a>
 
         <!-- MOBILE MENU -->
         <button

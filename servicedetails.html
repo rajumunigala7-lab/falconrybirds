@@ -1944,6 +1944,1026 @@ html[data-theme="dark"] .icon-btn:hover {
         transition-duration: 0.01ms !important;
       }
     }
+
+
+/* =========================================================
+   AVIORA BIRD WATCHING - RESPONSIVE SYSTEM
+
+   Desktop : 1200px+
+   Laptop  : 992px - 1199px
+   Tablet  : 768px - 991px
+   Mobile  : 0px - 767px
+========================================================= */
+
+:root {
+    --muted: var(--text-soft);
+    --surface-light: var(--bg-soft);
+}
+
+html {
+    overflow-x: hidden;
+    scroll-padding-top: 90px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    width: min(var(--container), calc(100% - 48px));
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   DESKTOP - 1200px+
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .header-inner {
+        min-height: 82px;
+    }
+
+    .main-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .mobile-menu-btn {
+        display: none !important;
+    }
+
+    .service-banner {
+        min-height: 650px;
+    }
+
+    .service-banner-content {
+        max-width: 760px;
+        padding: 110px 0 90px;
+    }
+
+    .service-banner h1 {
+        font-size: clamp(3.8rem, 6vw, 4.7rem);
+    }
+
+    .section {
+        padding: 110px 0;
+    }
+
+    .intro-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 65px;
+    }
+
+    .intro-image img {
+        height: 520px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .experience-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 70px;
+    }
+
+    .experience-image img {
+        height: 540px;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .booking-section {
+        padding: 100px 0;
+    }
+
+    .booking-box {
+        padding: 65px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+        gap: 55px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP - 992px to 1199px
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .container {
+        width: calc(100% - 48px);
+        max-width: 1150px;
+    }
+
+    .header-inner {
+        min-height: 78px;
+    }
+
+    .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 0;
+    }
+
+    .mobile-menu-btn {
+        display: none !important;
+    }
+
+    .nav-link,
+    .dropdown-toggle {
+        padding: 9px 7px;
+        font-size: .80rem;
+    }
+
+    .header-actions {
+        gap: 5px;
+    }
+
+    .login-btn {
+        padding-inline: 12px;
+    }
+
+    .service-banner {
+        min-height: 600px;
+    }
+
+    .service-banner-content {
+        max-width: 680px;
+        padding: 100px 0 80px;
+    }
+
+    .service-banner h1 {
+        font-size: clamp(3.2rem, 6vw, 4.4rem);
+    }
+
+    .section {
+        padding: 95px 0;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .intro-image img {
+        height: 500px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .feature-card {
+        padding: 26px;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .experience-image img {
+        height: 500px;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .info-card {
+        padding: 22px;
+    }
+
+    .booking-box {
+        padding: 50px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+        gap: 30px;
+    }
+}
+
+
+/* =========================================================
+   TABLET - 768px to 991px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .container {
+        width: calc(100% - 48px);
+        max-width: 920px;
+    }
+
+    .header-inner {
+        min-height: 76px;
+    }
+
+    /* Mobile/tablet navigation */
+    .main-nav {
+        position: fixed;
+        top: 88px;
+        left: 24px;
+        right: 24px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+
+        padding: 14px;
+
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-12px);
+
+        z-index: 9999;
+        transition: var(--transition);
+    }
+
+    .main-nav.mobile-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-link,
+    .dropdown-toggle {
+        width: 100%;
+        min-height: 48px;
+        justify-content: space-between;
+        padding: 12px 15px;
+        border-radius: 11px;
+    }
+
+    .mobile-menu-btn {
+        display: grid;
+    }
+
+    /* Dropdown inside mobile/tablet menu */
+    .dropdown-menu {
+        position: static;
+        display: none;
+
+        width: 100%;
+        margin: 3px 0 5px;
+        padding: 5px;
+
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown.open:hover .dropdown-menu {
+        display: block;
+    }
+
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    /* Hero */
+    .service-banner {
+        min-height: 560px;
+    }
+
+    .service-banner-content {
+        padding: 95px 0 75px;
+        max-width: 650px;
+    }
+
+    .service-banner h1 {
+        font-size: clamp(3rem, 7vw, 4rem);
+    }
+
+    .service-banner p {
+        font-size: 1rem;
+    }
+
+    /* Sections */
+    .section {
+        padding: 85px 0;
+    }
+
+    .intro-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    .intro-image img {
+        height: 440px;
+    }
+
+    /* Features - 2 columns */
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .feature-card {
+        padding: 25px;
+    }
+
+    /* Experience */
+    .experience-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    .experience-image img {
+        height: 460px;
+    }
+
+    /* Info - 2 columns */
+    .info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    /* Timeline */
+    .timeline {
+        max-width: 760px;
+    }
+
+    /* Booking */
+    .booking-section {
+        padding: 80px 0;
+    }
+
+    .booking-box {
+        padding: 45px 38px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .booking-box .btn {
+        width: auto;
+    }
+
+    /* Footer - 2 columns */
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 38px 28px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================================
+   MOBILE - 767px and below
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .container {
+        width: calc(100% - 32px);
+        max-width: none;
+    }
+
+    /* Header */
+    .header-inner {
+        min-height: 70px;
+        gap: 10px;
+    }
+
+    .logo {
+        min-width: 0;
+        gap: 8px;
+    }
+
+    .logo-mark {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-mark svg {
+        width: 27px;
+        height: 27px;
+    }
+
+    .logo-text {
+        font-size: 1.45rem;
+        white-space: nowrap;
+    }
+
+    .logo-text small {
+        font-size: .54rem;
+        letter-spacing: 1.5px;
+    }
+
+    .header-actions {
+        margin-left: auto;
+        gap: 5px;
+    }
+
+    .icon-btn {
+        width: 37px;
+        height: 37px;
+    }
+
+    /* Login becomes icon only */
+    .login-btn {
+        width: 37px;
+        height: 37px;
+        padding: 0;
+
+        display: grid;
+        place-items: center;
+
+        border-radius: 10px;
+    }
+
+    .login-btn span {
+        display: none;
+    }
+
+    /* Mobile navigation */
+    .main-nav {
+        position: fixed;
+
+        top: 78px;
+        left: 16px;
+        right: 16px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3px;
+
+        padding: 12px;
+
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+
+        z-index: 9999;
+        transition: var(--transition);
+    }
+
+    .main-nav.mobile-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-link,
+    .dropdown-toggle {
+        width: 100%;
+        min-height: 46px;
+        justify-content: space-between;
+        padding: 12px 13px;
+        border-radius: 10px;
+    }
+
+    .mobile-menu-btn {
+        display: grid;
+    }
+
+    /* Mobile dropdown */
+    .dropdown-menu {
+        position: static;
+        display: none;
+
+        width: 100%;
+        margin: 3px 0 5px;
+        padding: 5px;
+
+        box-shadow: none;
+        border-radius: 10px;
+
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown.open:hover .dropdown-menu {
+        display: block;
+    }
+
+    /* Hero */
+    .service-banner {
+        min-height: 520px;
+        display: flex;
+        align-items: center;
+    }
+
+    .service-banner-content {
+        padding: 90px 0 65px;
+        max-width: 100%;
+    }
+
+    .banner-label {
+        font-size: .72rem;
+        letter-spacing: 1.5px;
+    }
+
+    .service-banner h1 {
+        font-size: clamp(2.6rem, 11vw, 4rem);
+        line-height: 1.02;
+    }
+
+    .service-banner p {
+        font-size: .95rem;
+        line-height: 1.7;
+    }
+
+    /* Sections */
+    .section {
+        padding: 70px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 38px;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 9vw, 3rem);
+    }
+
+    .section-description,
+    .intro-text {
+        font-size: .94rem;
+        line-height: 1.75;
+    }
+
+    /* Intro becomes one column */
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .intro-image img {
+        height: 380px;
+    }
+
+    .image-badge {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+
+        max-width: calc(100% - 28px);
+
+        padding: 11px 14px;
+        font-size: .82rem;
+    }
+
+    .intro-grid .btn {
+        width: 100%;
+    }
+
+    /* Feature cards */
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .feature-card {
+        padding: 24px 20px;
+    }
+
+    .feature-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 17px;
+    }
+
+    /* Experience */
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .experience-image img {
+        height: 380px;
+        border-radius: 20px;
+    }
+
+    .experience-list {
+        margin-top: 20px;
+    }
+
+    .experience-list li {
+        gap: 11px;
+        padding: 12px 0;
+        font-size: .92rem;
+    }
+
+    /* Timeline */
+    .timeline {
+        max-width: none;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .timeline-number {
+        width: 42px;
+        height: 42px;
+        font-size: .78rem;
+    }
+
+    .timeline-content {
+        padding: 18px;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .timeline-content p {
+        font-size: .9rem;
+        line-height: 1.65;
+    }
+
+    /* Info cards */
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .info-card {
+        padding: 22px 20px;
+    }
+
+    /* FAQ */
+    .faq-question {
+        padding: 17px;
+        gap: 12px;
+        font-size: .92rem;
+    }
+
+    .faq-answer {
+        padding: 0 17px 17px;
+        font-size: .9rem;
+        line-height: 1.65;
+    }
+
+    /* Booking */
+    .booking-section {
+        padding: 70px 0;
+    }
+
+    .booking-box {
+        padding: 35px 22px;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+
+        border-radius: 20px;
+    }
+
+    .booking-box h2 {
+        font-size: clamp(2rem, 9vw, 2.7rem);
+    }
+
+    .booking-box p {
+        font-size: .92rem;
+        line-height: 1.7;
+    }
+
+    .booking-box .btn {
+        width: 100%;
+    }
+
+   
+    /* ================= FOOTER ================= */
+
+    .site-footer {
+        padding: 55px 0 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-description {
+        margin-inline: auto;
+        font-size: .82rem;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
+
+    .footer-links {
+        justify-items: center;
+    }
+
+    .footer-contact {
+        justify-items: center;
+    }
+
+    .footer-contact-item {
+        justify-content: center;
+        text-align: start;
+        font-size: .80rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .footer-bottom-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+    /* Login modal */
+    .modal-backdrop {
+        padding: 12px;
+    }
+
+    .modal {
+        width: 100%;
+        padding: 25px 19px;
+        border-radius: 18px;
+    }
+
+    .modal-header {
+        gap: 12px;
+        margin-bottom: 22px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.7rem;
+    }
+
+    /* Toast */
+    .toast {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+
+        min-width: 0;
+        max-width: none;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE - 380px and below
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .header-inner {
+        min-height: 66px;
+    }
+
+    .logo-mark {
+        width: 36px;
+        height: 36px;
+    }
+
+    .logo-mark svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+
+    .logo-text small {
+        font-size: .48rem;
+    }
+
+    .header-actions {
+        gap: 3px;
+    }
+
+    .icon-btn,
+    .login-btn {
+        width: 34px;
+        height: 34px;
+    }
+
+    .main-nav {
+        top: 72px;
+        left: 12px;
+        right: 12px;
+        padding: 10px;
+    }
+
+    .service-banner {
+        min-height: 480px;
+    }
+
+    .service-banner-content {
+        padding: 78px 0 55px;
+    }
+
+    .service-banner h1 {
+        font-size: 2.55rem;
+    }
+
+    .service-banner p {
+        font-size: .9rem;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .intro-image img,
+    .experience-image img {
+        height: 320px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .feature-card,
+    .info-card {
+        padding: 20px 17px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .timeline::before {
+        left: 18px;
+    }
+
+    .timeline-number {
+        width: 38px;
+        height: 38px;
+        font-size: .72rem;
+    }
+
+    .timeline-content {
+        padding: 16px;
+    }
+
+    .booking-box {
+        padding: 28px 18px;
+    }
+}
+
+
+/* =========================================================
+   RTL SUPPORT
+========================================================= */
+
+html[dir="rtl"] .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .footer-links a:hover {
+    transform: translateX(-3px);
+}
+
+html[dir="rtl"] .timeline::before {
+    left: auto;
+    right: 20px;
+}
+
+html[dir="rtl"] .timeline-item {
+    grid-template-columns: minmax(0, 1fr) 42px;
+}
+
+html[dir="rtl"] .timeline-number {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+html[dir="rtl"] .timeline-content {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+@media (max-width: 767px) {
+
+    html[dir="rtl"] .timeline::before {
+        right: 20px;
+    }
+
+    html[dir="rtl"] .timeline-item {
+        grid-template-columns: minmax(0, 1fr) 42px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    html[dir="rtl"] .timeline::before {
+        right: 18px;
+    }
+
+    html[dir="rtl"] .timeline-item {
+        grid-template-columns: minmax(0, 1fr) 38px;
+    }
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"] .image-badge {
+    background: rgba(25, 33, 27, .95);
+    color: #fff;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.nav-link:focus-visible,
+.dropdown-toggle:focus-visible,
+.icon-btn:focus-visible,
+.login-btn:focus-visible,
+.btn:focus-visible,
+.faq-question:focus-visible,
+.modal-close:focus-visible {
+    outline: 3px solid var(--accent-light);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
   </style>
 </head>
 
@@ -2079,14 +3099,17 @@ html[data-theme="dark"] .icon-btn:hover {
       </button>
 
 
-      <button
-        class="login-btn"
-        id="openLogin"
-        type="button"
-      >
-        <i class="fa-regular fa-user"></i>
-        Login
-      </button>
+      <!-- LOGIN -->
+        <a href="cta.html"
+               class="login-btn">
+ 
+                <i class="fa-solid fa-user"></i>
+ 
+                <span>
+                    Login
+                </span>
+ 
+            </a>
 
 
       <button
