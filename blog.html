@@ -1192,258 +1192,191 @@
        RESPONSIVE
     ========================= */
 
-    @media (max-width: 1050px) {
-      .main-nav {
-        gap: 0;
-      }
+   
+/* =========================================================
+   MOBILE
+   0px — 600px
+========================================================= */
 
-      .nav-link,
-      .dropdown-toggle {
-        padding-inline: 7px;
-        font-size: 0.81rem;
-      }
+@media (max-width: 600px) {
 
-      .login-btn {
-        padding-inline: 13px;
-      }
+    /* ================= GLOBAL ================= */
 
-      .contact-grid {
-        gap: 40px;
-      }
-
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .container {
+        width: calc(100% - 30px);
     }
 
-    @media (max-width: 760px) {
-      .container {
-        width: min(var(--container), calc(100% - 32px));
-      }
-
-      .header-inner {
-        min-height: 72px;
-      }
-
-      .main-nav {
-        position: fixed;
-        top: 72px;
-        left: 16px;
-        right: 16px;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 3px;
-        padding: 12px;
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        background: var(--surface);
-        box-shadow: var(--shadow);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: var(--transition);
-      }
-
-      .main-nav.mobile-open {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      .nav-link,
-      .dropdown-toggle {
-        width: 100%;
-        justify-content: space-between;
-        padding: 12px 13px;
-      }
-
-      .dropdown-menu {
-        position: static;
-        display: none;
-        margin: 3px 0 5px;
-        padding: 5px;
-        box-shadow: none;
-        border-radius: 11px;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-      }
-
-      .dropdown.open .dropdown-menu {
-        display: block;
-      }
-
-      .dropdown:hover .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-      }
-
-      .dropdown:hover .dropdown-toggle i {
-        transform: none;
-      }
-
-      .dropdown.open .dropdown-toggle i {
-        transform: rotate(180deg);
-      }
-
-      .mobile-menu-btn {
-        display: grid;
-      }
-
-      .login-btn span {
-        display: none;
-      }
-
-      .contact-hero {
-        min-height: 560px;
-        padding: 145px 0 80px;
-      }
-
-      .contact-grid,
-      .visit-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-info {
-        position: static;
-      }
-
-      .contact-form-wrap {
-        padding: 28px 22px;
-      }
-
-      .map-header {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .map-wrap,
-      .map-wrap iframe {
-        min-height: 430px;
-        height: 430px;
-      }
-
-      .help-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .visit-image img {
-        height: 420px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px 25px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    html {
+        scroll-padding-top: 75px;
     }
 
-    @media (max-width: 520px) {
-      .logo-text {
-        font-size: 1.45rem;
-      }
 
-      .logo-mark {
-        width: 40px;
-        height: 40px;
-      }
+    /* ================= HEADER ================= */
 
-      .header-actions {
+    .site-header {
+        min-height: 68px;
+    }
+
+    .header-inner {
+        min-height: 68px;
         gap: 5px;
-      }
+    }
 
-      .icon-btn {
+    .logo {
+        gap: 6px;
+        min-width: 0;
+    }
+
+    .logo-mark {
+        width: 38px;
+        height: 38px;
+        flex-shrink: 0;
+    }
+
+    .logo-mark svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .logo-text {
+        font-size: 21px;
+        white-space: nowrap;
+    }
+
+    .logo-text small {
+        font-size: 7px;
+        letter-spacing: 1.1px;
+        margin-top: 2px;
+    }
+
+    .header-actions {
+        gap: 4px;
+        flex-shrink: 0;
+    }
+
+    .icon-btn {
         width: 37px;
         height: 37px;
-      }
+        flex-shrink: 0;
+    }
 
-      .login-btn {
+    .login-btn {
         width: 37px;
         height: 37px;
         padding: 0;
         justify-content: center;
         border-radius: 10px;
-      }
-
-      .contact-hero {
-        min-height: 540px;
-      }
-
-      .hero-title {
-        font-size: 3rem;
-      }
-
-      .hero-description {
-        font-size: 0.96rem;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-section,
-      .visit-section,
-      .help-section,
-      .final-cta {
-        padding: 80px 0;
-      }
-
-      .map-section {
-        padding-bottom: 80px;
-      }
-
-      .map-overlay {
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-        max-width: none;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-bottom-links {
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      .toast {
-        left: 16px;
-        right: 16px;
-        bottom: 16px;
-        min-width: 0;
-      }
-
-      .modal {
-        padding: 25px 20px;
-      }
+        flex-shrink: 0;
     }
 
-    /* =========================
-       REDUCED MOTION
-    ========================= */
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
+    .login-btn span {
+        display: none;
     }
 
+    .mobile-menu-btn {
+        display: grid !important;
+        place-items: center;
+        width: 39px;
+        height: 39px;
+        border-radius: 10px;
+        background: var(--surface);
+        color: var(--primary);
+        border: 1px solid var(--border);
+        flex-shrink: 0;
+    }
+
+
+    /* ================= MOBILE NAV ================= */
+
+    .main-nav {
+        position: fixed;
+
+        top: 76px;
+        left: 15px;
+        right: 15px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 3px;
+        padding: 10px;
+
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 17px;
+
+        box-shadow: var(--shadow);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-12px);
+
+        transition:
+            opacity .25s ease,
+            visibility .25s ease,
+            transform .25s ease;
+
+        z-index: 9999;
+    }
+
+    .main-nav.mobile-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .nav-link,
+    .dropdown-toggle {
+        width: 100%;
+        min-height: 45px;
+        padding: 11px 13px;
+        justify-content: space-between;
+        font-size: .86rem;
+    }
+
+
+    /* ================= DROPDOWN ================= */
+
+    .dropdown-menu {
+        position: static;
+
+        display: none;
+
+        width: 100%;
+        margin: 2px 0 5px;
+        padding: 5px;
+
+        box-shadow: none;
+        border-radius: 10px;
+
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .dropdown:hover .dropdown-toggle i {
+        transform: none;
+    }
+
+    .dropdown.open .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+
+  }
     /* =========================================================
    AVIORA BLOG PAGE
    RESPONSIVE SYSTEM
@@ -1610,7 +1543,6 @@
   }
 }
 
-
 /* =========================================================
    TABLET
    601px — 900px
@@ -1618,136 +1550,395 @@
 
 @media (min-width: 601px) and (max-width: 900px) {
 
-  /* ---------- CONTAINER ---------- */
+    /* ================= GLOBAL ================= */
 
-  .container {
-    width: min(var(--container), calc(100% - 40px));
-  }
+    .container {
+        width: calc(100% - 44px);
+    }
 
-  /* ---------- FEATURED STORY ---------- */
 
-  .featured-section {
-    padding: 70px 0;
-  }
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
-  .featured {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 450px;
-    overflow: hidden;
-    border-radius: 22px;
-  }
+    .header-inner {
+        min-height: 72px;
+        gap: 10px;
+    }
 
-  .featured-image {
-    min-height: 450px;
-  }
+    /* ---------- LOGO ---------- */
 
-  .featured-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 35px;
-  }
+    .logo {
+        gap: 7px;
+        flex-shrink: 0;
+    }
 
-  .featured-content h2 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    line-height: 1.1;
-  }
+    .logo-mark {
+        width: 39px;
+        height: 39px;
+        flex-shrink: 0;
+    }
 
-  .featured-content p {
-    font-size: .92rem;
-    line-height: 1.7;
-  }
+    .logo-mark svg {
+        width: 26px;
+        height: 26px;
+    }
 
-  /* ---------- FILTERS ---------- */
+    .logo-text {
+        font-size: 22px;
+        white-space: nowrap;
+    }
 
-  .filters {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 9px;
-    margin-bottom: 35px;
-  }
+    .logo-text small {
+        font-size: 8px;
+        letter-spacing: 1.3px;
+        white-space: nowrap;
+    }
 
-  .filter-btn {
-    padding: 10px 16px;
-    font-size: .85rem;
-  }
 
-  /* ---------- BLOG GRID ---------- */
+    /* ---------- NAVIGATION ---------- */
 
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
+    .main-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-  .card-image {
-    height: 260px;
-  }
+        gap: 0;
 
-  .card-content {
-    padding: 21px;
-  }
+        min-width: 0;
+        flex: 1;
+    }
 
-  .card-content h3 {
-    font-size: 1.2rem;
-  }
+    .nav-link,
+    .dropdown-toggle {
+        padding: 8px 5px;
 
-  .card-content p {
-    font-size: .88rem;
-    line-height: 1.7;
-  }
+        font-size: .70rem;
 
-  /* ---------- NEWSLETTER ---------- */
+        white-space: nowrap;
+    }
 
-  .newsletter-section {
-    padding: 70px 0;
-  }
+    .dropdown-toggle {
+        gap: 4px;
+    }
 
-  .newsletter-box {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
-    padding: 40px;
-    border-radius: 22px;
-  }
+    .dropdown-toggle i {
+        font-size: .55rem;
+    }
 
-  .newsletter-form {
-    display: flex;
-    gap: 10px;
-  }
 
-  .newsletter-form input {
-    flex: 1;
-    min-width: 0;
-  }
+    /* ---------- HEADER ACTIONS ---------- */
 
-  .newsletter-form button {
-    width: auto;
-    flex: 0 0 auto;
-  }
+    .header-actions {
+        display: flex;
+        align-items: center;
 
-  /* ---------- FOOTER ---------- */
+        gap: 3px;
 
-  .footer-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 35px 25px;
-  }
+        flex-shrink: 0;
+    }
 
-  .footer-brand {
-    grid-column: 1 / -1;
-    max-width: 620px;
-  }
+    .icon-btn {
+        width: 35px;
+        height: 35px;
 
-  .footer-bottom {
-    flex-wrap: wrap;
-    gap: 15px 25px;
-  }
+        flex-shrink: 0;
+    }
+
+    .login-btn {
+        min-height: 35px;
+
+        padding: 8px 9px;
+
+        font-size: .70rem;
+
+        white-space: nowrap;
+    }
+
+    .mobile-menu-btn {
+        display: none !important;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+        min-height: 620px;
+        padding-top: 72px;
+    }
+
+    .hero-content {
+        max-width: 620px;
+
+        padding-top: 55px;
+        padding-bottom: 120px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+        line-height: 1.08;
+    }
+
+    .hero-description {
+        max-width: 570px;
+
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .hero-facts {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px 25px;
+
+        bottom: 30px;
+
+        left: 22px;
+        right: 22px;
+
+        inset-inline-start: 22px;
+        inset-inline-end: 22px;
+    }
+
+    .hero-fact strong {
+        font-size: 19px;
+    }
+
+    .hero-fact span {
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       INTRO
+    ===================================================== */
+
+    .intro {
+        padding: 85px 0;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .intro-image {
+        width: 100%;
+        max-width: 680px;
+
+        margin-inline: auto;
+    }
+
+    .intro-image img {
+        width: 100%;
+        height: 430px;
+
+        object-fit: cover;
+    }
+
+    .experience-badge {
+        width: 155px;
+
+        padding: 18px;
+
+        bottom: 20px;
+
+        inset-inline-end: -8px;
+    }
+
+    .experience-badge strong {
+        font-size: 34px;
+    }
+
+
+    /* =====================================================
+       STATS
+    ===================================================== */
+
+    .stats {
+        padding: 20px 0 80px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat {
+        padding: 28px 15px;
+    }
+
+    .stat:nth-child(2) {
+        border-inline-end: 0;
+    }
+
+    .stat:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .stat strong {
+        font-size: 38px;
+    }
+
+
+    /* =====================================================
+       BIRDS
+    ===================================================== */
+
+    .birds {
+        padding: 85px 0;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        margin-bottom: 35px;
+    }
+
+    .birds-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 18px;
+    }
+
+    .bird-card:last-child {
+        grid-column: 1 / -1;
+
+        width: calc(50% - 9px);
+
+        margin-inline: auto;
+    }
+
+    .bird-image {
+        height: 245px;
+    }
+
+    .bird-content {
+        padding: 20px;
+    }
+
+    .bird-content h3 {
+        font-size: 23px;
+    }
+
+
+    /* =====================================================
+       SERVICES
+    ===================================================== */
+
+    .services {
+        padding: 85px 0;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 18px;
+    }
+
+    .service-card {
+        padding: 27px 22px;
+    }
+
+    .service-card h3 {
+        font-size: 22px;
+    }
+
+
+    /* =====================================================
+       EXPERIENCE
+    ===================================================== */
+
+    .experience {
+        padding: 85px 0;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .experience-image {
+        order: -1;
+    }
+
+    .experience-image img {
+        width: 100%;
+        height: 420px;
+
+        object-fit: cover;
+    }
+
+
+    /* =====================================================
+       EDUCATION
+    ===================================================== */
+
+    .education {
+        padding: 85px 0;
+    }
+
+    .education-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 18px;
+    }
+
+    .education-card {
+        min-height: 275px;
+
+        padding: 25px;
+    }
+
+    .education-content h3 {
+        font-size: 27px;
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta {
+        padding-bottom: 85px;
+    }
+
+    .cta-box {
+        padding: 45px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .site-footer {
+        padding-top: 60px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 35px;
+    }
 }
-
-
 /* =========================================================
    MOBILE
    0px — 600px

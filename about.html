@@ -1566,265 +1566,8 @@ html[data-theme="dark"] .story-badge {
       transform: translateX(-3px);
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
-    @media (max-width: 1050px) {
-      .main-nav {
-        gap: 0;
-      }
-
-      .nav-link,
-      .dropdown-toggle {
-        padding-inline: 7px;
-        font-size: 0.81rem;
-      }
-
-      .login-btn {
-        padding-inline: 13px;
-      }
-
-      .contact-grid {
-        gap: 40px;
-      }
-
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 760px) {
-      .container {
-        width: min(var(--container), calc(100% - 32px));
-      }
-
-      .header-inner {
-        min-height: 72px;
-      }
-
-      .main-nav {
-        position: fixed;
-        top: 72px;
-        left: 16px;
-        right: 16px;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 3px;
-        padding: 12px;
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        background: var(--surface);
-        box-shadow: var(--shadow);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: var(--transition);
-      }
-
-      .main-nav.mobile-open {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      .nav-link,
-      .dropdown-toggle {
-        width: 100%;
-        justify-content: space-between;
-        padding: 12px 13px;
-      }
-
-      .dropdown-menu {
-        position: static;
-        display: none;
-        margin: 3px 0 5px;
-        padding: 5px;
-        box-shadow: none;
-        border-radius: 11px;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-      }
-
-      .dropdown.open .dropdown-menu {
-        display: block;
-      }
-
-      .dropdown:hover .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-      }
-
-      .dropdown:hover .dropdown-toggle i {
-        transform: none;
-      }
-
-      .dropdown.open .dropdown-toggle i {
-        transform: rotate(180deg);
-      }
-
-      .mobile-menu-btn {
-        display: grid;
-      }
-
-      .login-btn span {
-        display: none;
-      }
-
-      .contact-hero {
-        min-height: 560px;
-        padding: 145px 0 80px;
-      }
-
-      .contact-grid,
-      .visit-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-info {
-        position: static;
-      }
-
-      .contact-form-wrap {
-        padding: 28px 22px;
-      }
-
-      .map-header {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .map-wrap,
-      .map-wrap iframe {
-        min-height: 430px;
-        height: 430px;
-      }
-
-      .help-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .visit-image img {
-        height: 420px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px 25px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .logo-text {
-        font-size: 1.45rem;
-      }
-
-      .logo-mark {
-        width: 40px;
-        height: 40px;
-      }
-
-      .header-actions {
-        gap: 5px;
-      }
-
-      .icon-btn {
-        width: 37px;
-        height: 37px;
-      }
-
-      .login-btn {
-        width: 37px;
-        height: 37px;
-        padding: 0;
-        justify-content: center;
-        border-radius: 10px;
-      }
-
-      .contact-hero {
-        min-height: 540px;
-      }
-
-      .hero-title {
-        font-size: 3rem;
-      }
-
-      .hero-description {
-        font-size: 0.96rem;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-section,
-      .visit-section,
-      .help-section,
-      .final-cta {
-        padding: 80px 0;
-      }
-
-      .map-section {
-        padding-bottom: 80px;
-      }
-
-      .map-overlay {
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-        max-width: none;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-bottom-links {
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      .toast {
-        left: 16px;
-        right: 16px;
-        bottom: 16px;
-        min-width: 0;
-      }
-
-      .modal {
-        padding: 25px 20px;
-      }
-    }
-
-    /* =========================
-       REDUCED MOTION
-    ========================= */
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-
-    
-/* =========================================================
-   AVIORA COMPLETE RESPONSIVE SYSTEM
+    /* =========================================================
+   AVIORA — COMPLETE RESPONSIVE SYSTEM
    Desktop + Laptop + Tablet + Mobile + Small Mobile
 ========================================================= */
 
@@ -1862,46 +1605,172 @@ a {
 
 
 /* =========================================================
-   LARGE DESKTOP
+   HEADER — BASE
+========================================================= */
+
+.site-header {
+  position: relative;
+  z-index: 1000;
+}
+
+.header-inner {
+  min-height: 84px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.logo-mark {
+  flex-shrink: 0;
+}
+
+.logo-text {
+  white-space: nowrap;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+  margin-left: auto;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   ICON BUTTON
+========================================================= */
+
+.icon-btn {
+  width: 42px;
+  height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid var(--border);
+  border-radius: 11px;
+
+  background: var(--surface);
+  color: var(--text);
+
+  cursor: pointer;
+  flex-shrink: 0;
+
+  transition:
+    background-color .25s ease,
+    color .25s ease,
+    border-color .25s ease,
+    transform .25s ease;
+}
+
+.icon-btn i {
+  font-size: .95rem;
+  line-height: 1;
+}
+
+.icon-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.login-btn {
+  min-height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 16px;
+
+  border-radius: 11px;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  flex-shrink: 0;
+
+  transition:
+    background-color .25s ease,
+    color .25s ease,
+    transform .25s ease;
+}
+
+.login-btn i {
+  font-size: .9rem;
+}
+
+.login-btn span {
+  display: inline-block;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.mobile-menu-btn {
+  display: none;
+}
+
+
+/* =========================================================
+   DESKTOP
    1200px AND ABOVE
 ========================================================= */
 
 @media (min-width: 1200px) {
 
-  /* ================= HEADER ================= */
-
-  .site-header {
-    position: relative;
-    z-index: 1000;
+  .container {
+    width: min(
+      var(--container, 1200px),
+      calc(100% - 48px)
+    );
   }
+
+  /* ---------- HEADER ---------- */
 
   .header-inner {
     min-height: 84px;
-
-    display: flex;
-    align-items: center;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
   }
 
   .main-nav {
     display: flex;
     align-items: center;
-    gap: 4px;
 
+    gap: 4px;
     margin-left: auto;
   }
 
   .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
     margin-left: 18px;
+    gap: 8px;
   }
 
   .mobile-menu-btn {
@@ -1909,7 +1778,7 @@ a {
   }
 
 
-  /* ================= NAVIGATION ================= */
+  /* ---------- NAVIGATION ---------- */
 
   .nav-link,
   .dropdown-toggle {
@@ -1956,7 +1825,7 @@ a {
   }
 
 
-  /* ================= HERO ================= */
+  /* ---------- HERO ---------- */
 
   .about-hero {
     min-height: 700px;
@@ -1967,7 +1836,6 @@ a {
 
   .about-hero-content {
     max-width: 760px;
-
     padding: 100px 0;
   }
 
@@ -1989,7 +1857,7 @@ a {
   }
 
 
-  /* ================= STORY ================= */
+  /* ---------- STORY ---------- */
 
   .about-story {
     padding: 120px 0;
@@ -2028,7 +1896,7 @@ a {
   }
 
 
-  /* ================= VALUES ================= */
+  /* ---------- VALUES ---------- */
 
   .values-section {
     padding: 120px 0;
@@ -2059,7 +1927,7 @@ a {
   }
 
 
-  /* ================= MISSION ================= */
+  /* ---------- MISSION ---------- */
 
   .mission-section {
     padding: 120px 0;
@@ -2085,7 +1953,7 @@ a {
   }
 
 
-  /* ================= NUMBERS ================= */
+  /* ---------- NUMBERS ---------- */
 
   .numbers-section {
     padding: 100px 0;
@@ -2101,7 +1969,7 @@ a {
   }
 
 
-  /* ================= TEAM ================= */
+  /* ---------- TEAM ---------- */
 
   .team-section {
     padding: 120px 0;
@@ -2128,7 +1996,7 @@ a {
   }
 
 
-  /* ================= CTA ================= */
+  /* ---------- CTA ---------- */
 
   .about-cta {
     padding: 110px 0;
@@ -2145,7 +2013,7 @@ a {
   }
 
 
-  /* ================= FOOTER ================= */
+  /* ---------- FOOTER ---------- */
 
   .site-footer {
     padding-top: 80px;
@@ -2186,7 +2054,7 @@ a {
   }
 
 
-  /* ================= HEADER ================= */
+  /* ---------- HEADER ---------- */
 
   .header-inner {
     min-height: 78px;
@@ -2195,15 +2063,12 @@ a {
   .main-nav {
     display: flex;
     align-items: center;
-    gap: 0;
 
+    gap: 0;
     margin-left: auto;
   }
 
   .header-actions {
-    display: flex;
-    align-items: center;
-
     gap: 5px;
     margin-left: 10px;
   }
@@ -2213,7 +2078,7 @@ a {
   }
 
 
-  /* ================= NAV ================= */
+  /* ---------- NAV ---------- */
 
   .nav-link,
   .dropdown-toggle {
@@ -2242,13 +2107,17 @@ a {
     visibility: hidden;
 
     transform: translateY(8px);
+
+    transition:
+      opacity .25s ease,
+      visibility .25s ease,
+      transform .25s ease;
   }
 
   .dropdown:hover .dropdown-menu,
   .dropdown.open .dropdown-menu {
     opacity: 1;
     visibility: visible;
-
     transform: translateY(0);
   }
 
@@ -2257,7 +2126,7 @@ a {
   }
 
 
-  /* ================= HERO ================= */
+  /* ---------- HERO ---------- */
 
   .about-hero {
     min-height: 620px;
@@ -2277,7 +2146,7 @@ a {
   }
 
 
-  /* ================= STORY ================= */
+  /* ---------- STORY ---------- */
 
   .about-story {
     padding: 100px 0;
@@ -2308,7 +2177,7 @@ a {
   }
 
 
-  /* ================= VALUES ================= */
+  /* ---------- VALUES ---------- */
 
   .values-section {
     padding: 100px 0;
@@ -2328,7 +2197,7 @@ a {
   }
 
 
-  /* ================= MISSION ================= */
+  /* ---------- MISSION ---------- */
 
   .mission-grid {
     display: grid;
@@ -2339,7 +2208,7 @@ a {
   }
 
 
-  /* ================= NUMBERS ================= */
+  /* ---------- NUMBERS ---------- */
 
   .numbers-grid {
     display: grid;
@@ -2351,7 +2220,7 @@ a {
   }
 
 
-  /* ================= TEAM ================= */
+  /* ---------- TEAM ---------- */
 
   .team-grid {
     display: grid;
@@ -2363,7 +2232,7 @@ a {
   }
 
 
-  /* ================= FOOTER ================= */
+  /* ---------- FOOTER ---------- */
 
   .footer-grid {
     display: grid;
@@ -2381,10 +2250,10 @@ a {
 
 /* =========================================================
    TABLET
-   601px — 991px
+   761px — 991px
 ========================================================= */
 
-@media (min-width: 601px) and (max-width: 991px) {
+@media (min-width: 761px) and (max-width: 991px) {
 
   .container {
     width: calc(100% - 48px);
@@ -2392,21 +2261,51 @@ a {
   }
 
 
-  /* ================= HEADER ================= */
+  /* ---------- HEADER ---------- */
 
   .header-inner {
     min-height: 76px;
-
-    display: flex;
-    align-items: center;
   }
+
+  .header-actions {
+    gap: 7px;
+  }
+
+  .icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .login-btn {
+    min-height: 80px;
+    width: 80px; 
+
+    padding: 0 13px;
+
+    gap: 7px;
+  }
+
+  .login-btn span {
+    display: inline-block;
+    font-size: .84rem;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex;
+  }
+
+
+  /* ---------- NAV ---------- */
 
   .main-nav {
     position: fixed;
 
-    top: 88px;
+    top: 76px;
     left: 24px;
     right: 24px;
+
+    width: auto;
 
     display: flex;
     flex-direction: column;
@@ -2425,6 +2324,7 @@ a {
 
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
 
     transform: translateY(-12px);
 
@@ -2438,14 +2338,11 @@ a {
 
   .main-nav.mobile-open {
     opacity: 1;
-
     visibility: visible;
+    pointer-events: auto;
 
     transform: translateY(0);
   }
-
-
-  /* ================= NAV ================= */
 
   .nav-link,
   .dropdown-toggle {
@@ -2461,12 +2358,12 @@ a {
     border-radius: 12px;
   }
 
-  .mobile-menu-btn {
-    display: grid;
+
+  /* ---------- DROPDOWN ---------- */
+
+  .dropdown {
+    position: relative;
   }
-
-
-  /* ================= DROPDOWN ================= */
 
   .dropdown-menu {
     position: static;
@@ -2476,14 +2373,12 @@ a {
     width: 100%;
 
     margin: 3px 0 5px;
-
     padding: 5px;
 
     box-shadow: none;
 
     opacity: 1;
     visibility: visible;
-
     transform: none;
   }
 
@@ -2499,24 +2394,12 @@ a {
     display: block;
   }
 
-  .dropdown.open
-  .dropdown-toggle
-  i {
+  .dropdown.open .dropdown-toggle i {
     transform: rotate(180deg);
   }
 
 
-  /* ================= HEADER ACTIONS ================= */
-
-  .header-actions {
-    display: flex;
-    align-items: center;
-
-    gap: 6px;
-  }
-
-
-  /* ================= HERO ================= */
+  /* ---------- HERO ---------- */
 
   .about-hero {
     min-height: 590px;
@@ -2543,12 +2426,11 @@ a {
     max-width: 600px;
 
     font-size: 1rem;
-
     line-height: 1.75;
   }
 
 
-  /* ================= STORY ================= */
+  /* ---------- STORY ---------- */
 
   .about-story {
     padding: 90px 0;
@@ -2586,7 +2468,7 @@ a {
   }
 
 
-  /* ================= VALUES ================= */
+  /* ---------- VALUES ---------- */
 
   .values-section {
     padding: 90px 0;
@@ -2611,12 +2493,11 @@ a {
 
   .value-card {
     min-height: 270px;
-
     padding: 28px;
   }
 
 
-  /* ================= MISSION ================= */
+  /* ---------- MISSION ---------- */
 
   .mission-section {
     padding: 90px 0;
@@ -2635,7 +2516,7 @@ a {
   }
 
 
-  /* ================= NUMBERS ================= */
+  /* ---------- NUMBERS ---------- */
 
   .numbers-section {
     padding: 80px 0;
@@ -2651,7 +2532,7 @@ a {
   }
 
 
-  /* ================= TEAM ================= */
+  /* ---------- TEAM ---------- */
 
   .team-section {
     padding: 90px 0;
@@ -2675,7 +2556,7 @@ a {
   }
 
 
-  /* ================= CTA ================= */
+  /* ---------- CTA ---------- */
 
   .about-cta {
     padding: 90px 0;
@@ -2688,7 +2569,7 @@ a {
   }
 
 
-  /* ================= FOOTER ================= */
+  /* ---------- FOOTER ---------- */
 
   .site-footer {
     padding-top: 70px;
@@ -2707,7 +2588,6 @@ a {
     display: flex;
 
     flex-direction: column;
-
     align-items: flex-start;
 
     gap: 15px;
@@ -2716,191 +2596,306 @@ a {
 
 
 /* =========================================================
+   SMALL TABLET
+   601px — 760px
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 760px) {
+
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .header-inner {
+    min-height: 72px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .icon-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .login-btn {
+    width: 80px;
+    min-width: 80px;
+
+    min-height: 80px;
+
+    padding: 0;
+
+    border-radius: 9px;
+  }
+
+  .login-btn span {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    width: 39px;
+    height: 39px;
+
+    display: inline-flex;
+  }
+  
+
+
+  /* ---------- MOBILE/TABLET NAV ---------- */
+
+  .main-nav {
+    top: 72px;
+    left: 16px;
+    right: 16px;
+
+    max-height: calc(100vh - 88px);
+
+    overflow-y: auto;
+  }
+
+
+  /* ---------- CONTENT ---------- */
+
+  .story-grid,
+  .mission-grid {
+    gap: 35px;
+  }
+
+  .about-hero-content {
+    padding: 75px 0;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(
+      3.2rem,
+      9vw,
+      4.5rem
+    );
+  }
+
+  .values-grid,
+  .numbers-grid,
+  .team-grid {
+    gap: 18px;
+  }
+}
+
+
+/* =========================================================
    MOBILE
-   0px — 600px
+   381px — 600px
 ========================================================= */
 
 @media (max-width: 600px) {
 
-    /* ================= GLOBAL ================= */
+  .container {
+    width: calc(100% - 30px);
+  }
 
-    .container {
-        width: calc(100% - 30px);
-    }
-
-    html {
-        scroll-padding-top: 75px;
-    }
+  html {
+    scroll-padding-top: 75px;
+  }
 
 
-    /* ================= HEADER ================= */
+  /* ---------- HEADER ---------- */
 
-    .site-header {
-        min-height: 68px;
-    }
+  .site-header {
+    min-height: 68px;
+  }
 
-    .header-inner {
-        min-height: 68px;
-        gap: 5px;
-    }
+  .header-inner {
+    min-height: 68px;
 
-    .logo {
-        gap: 6px;
-        min-width: 0;
-    }
+    gap: 8px;
+  }
 
-    .logo-mark {
-        width: 38px;
-        height: 38px;
-        flex-shrink: 0;
-    }
+  .logo {
+    gap: 6px;
+    min-width: 0;
+  }
 
-    .logo-mark svg {
-        width: 25px;
-        height: 25px;
-    }
+  .logo-mark {
+    width: 38px;
+    height: 38px;
 
-    .logo-text {
-        font-size: 21px;
-        white-space: nowrap;
-    }
+    flex-shrink: 0;
+  }
 
-    .logo-text small {
-        font-size: 7px;
-        letter-spacing: 1.1px;
-        margin-top: 2px;
-    }
+  .logo-mark svg {
+    width: 25px;
+    height: 25px;
+  }
 
-    .header-actions {
-        gap: 4px;
-        flex-shrink: 0;
-    }
+  .logo-text {
+    font-size: 21px;
+    white-space: nowrap;
+  }
 
-    .icon-btn {
-        width: 37px;
-        height: 37px;
-        flex-shrink: 0;
-    }
+  .logo-text small {
+    font-size: 7px;
+    letter-spacing: 1.1px;
+    margin-top: 2px;
+  }
 
-    .login-btn {
-        width: 37px;
-        height: 37px;
-        padding: 0;
-        justify-content: center;
-        border-radius: 10px;
-        flex-shrink: 0;
-    }
+  .header-actions {
+    gap: 5px;
+  }
 
-    .login-btn span {
-        display: none;
-    }
+  .icon-btn,
+  .login-btn {
+    width: 38px;
+    height: 38px;
 
-    .mobile-menu-btn {
-        display: grid !important;
-        place-items: center;
-        width: 39px;
-        height: 39px;
-        border-radius: 10px;
-        background: var(--surface);
-        color: var(--primary);
-        border: 1px solid var(--border);
-        flex-shrink: 0;
-    }
+    min-height: 38px;
+
+    border-radius: 9px;
+  }
+.login-btn {
+    width: 80px;
+    min-width: 80px;
+
+    min-height: 80px;
+
+    padding: 0;
+
+    border-radius: 9px;
+  }
+
+  .login-btn span {
+    display: none;
+  }
 
 
-    /* ================= MOBILE NAV ================= */
+  .mobile-menu-btn {
+    display: inline-flex;
+  }
+  .icon-btn,
+  .login-btn {
+    width: 35px;
+    height: 35px;
 
-    .main-nav {
-        position: fixed;
+    min-height: 35px;
 
-        top: 76px;
-        left: 15px;
-        right: 15px;
+    border-radius: 8px;
+  }
 
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-
-        gap: 3px;
-        padding: 10px;
-
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 17px;
-
-        box-shadow: var(--shadow);
-
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-
-        transform: translateY(-12px);
-
-        transition:
-            opacity .25s ease,
-            visibility .25s ease,
-            transform .25s ease;
-
-        z-index: 9999;
-    }
-
-    .main-nav.mobile-open {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transform: translateY(0);
-    }
-
-    .nav-link,
-    .dropdown-toggle {
-        width: 100%;
-        min-height: 45px;
-        padding: 11px 13px;
-        justify-content: space-between;
-        font-size: .86rem;
-    }
+  .icon-btn i,
+  .login-btn i {
+    font-size: .78rem;
+  }
 
 
-    /* ================= DROPDOWN ================= */
+  /* ---------- MOBILE NAV ---------- */
 
-    .dropdown-menu {
-        position: static;
+  .main-nav {
+    position: fixed;
 
-        display: none;
+    top: 68px;
+    left: 12px;
+    right: 12px;
 
-        width: 100%;
-        margin: 2px 0 5px;
-        padding: 5px;
+    width: auto;
 
-        box-shadow: none;
-        border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-    }
+    gap: 3px;
 
-    .dropdown.open .dropdown-menu {
-        display: block;
-    }
+    padding: 10px;
 
-    .dropdown:hover .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-    }
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
 
-    .dropdown:hover .dropdown-toggle i {
-        transform: none;
-    }
+    background: var(--surface);
 
-    .dropdown.open .dropdown-toggle i {
-        transform: rotate(180deg);
-    }
+    border: 1px solid var(--border);
+    border-radius: 17px;
+
+    box-shadow: var(--shadow);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-12px);
+
+    z-index: 9999;
+
+    transition:
+      opacity .25s ease,
+      visibility .25s ease,
+      transform .25s ease;
+  }
+
+  .main-nav.mobile-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0);
+  }
+
+  .nav-link,
+  .dropdown-toggle {
+    width: 100%;
+
+    min-height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 11px 13px;
+
+    border-radius: 9px;
+
+    font-size: .86rem;
+  }
 
 
+  /* ---------- DROPDOWN ---------- */
 
-  /* ================= HERO ================= */
+  .dropdown-menu {
+    position: static;
+
+    display: none;
+
+    width: 100%;
+
+    margin: 2px 0 5px;
+    padding: 5px;
+
+    box-shadow: none;
+    border-radius: 10px;
+
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .dropdown:hover .dropdown-toggle i {
+    transform: none;
+  }
+
+  .dropdown.open .dropdown-toggle i {
+    transform: rotate(180deg);
+  }
+
+
+  /* ---------- HERO ---------- */
 
   .about-hero {
     min-height: 540px;
@@ -2911,7 +2906,6 @@ a {
 
   .about-hero-content {
     padding: 90px 0 70px;
-
     max-width: 100%;
   }
 
@@ -2927,7 +2921,6 @@ a {
 
   .about-hero p {
     font-size: .96rem;
-
     line-height: 1.7;
 
     max-width: 100%;
@@ -2935,12 +2928,11 @@ a {
 
   .about-hero .btn {
     width: 100%;
-
     justify-content: center;
   }
 
 
-  /* ================= STORY ================= */
+  /* ---------- STORY ---------- */
 
   .about-story {
     padding: 75px 0;
@@ -2960,7 +2952,6 @@ a {
 
   .story-image img {
     width: 100%;
-
     height: 400px;
 
     display: block;
@@ -2986,29 +2977,24 @@ a {
 
   .story-copy p {
     font-size: .95rem;
-
     line-height: 1.7;
   }
 
   .story-point {
     display: flex;
-
     align-items: flex-start;
 
     gap: 10px;
-
     margin-bottom: 15px;
   }
 
   .story-point i {
     flex-shrink: 0;
-
     margin-top: 5px;
   }
 
   .story-copy .btn {
     width: 100%;
-
     justify-content: center;
   }
 
@@ -3021,7 +3007,7 @@ a {
   }
 
 
-  /* ================= VALUES ================= */
+  /* ---------- VALUES ---------- */
 
   .values-section {
     padding: 75px 0;
@@ -3029,7 +3015,6 @@ a {
 
   .values-heading {
     margin-bottom: 40px;
-
     text-align: center;
   }
 
@@ -3043,18 +3028,16 @@ a {
 
   .value-card {
     min-height: auto;
-
     padding: 26px 22px;
   }
 
   .value-card p {
     font-size: .92rem;
-
     line-height: 1.65;
   }
 
 
-  /* ================= MISSION ================= */
+  /* ---------- MISSION ---------- */
 
   .mission-section {
     padding: 75px 0;
@@ -3070,7 +3053,6 @@ a {
 
   .mission-image img {
     width: 100%;
-
     height: auto;
 
     display: block;
@@ -3081,7 +3063,7 @@ a {
   }
 
 
-  /* ================= NUMBERS ================= */
+  /* ---------- NUMBERS ---------- */
 
   .numbers-section {
     padding: 65px 0;
@@ -3100,7 +3082,6 @@ a {
     padding: 24px 14px;
 
     text-align: center;
-
     min-width: 0;
   }
 
@@ -3113,7 +3094,7 @@ a {
   }
 
 
-  /* ================= TEAM ================= */
+  /* ---------- TEAM ---------- */
 
   .team-section {
     padding: 75px 0;
@@ -3129,22 +3110,19 @@ a {
 
   .team-grid > :last-child {
     grid-column: auto;
-
     width: 100%;
-
     margin-inline: 0;
   }
 
   .team-image img {
     width: 100%;
-
     display: block;
 
     object-fit: cover;
   }
 
 
-  /* ================= CTA ================= */
+  /* ---------- CTA ---------- */
 
   .about-cta {
     padding: 75px 0;
@@ -3154,9 +3132,7 @@ a {
     padding: 38px 24px;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: stretch;
 
     gap: 25px;
@@ -3168,60 +3144,71 @@ a {
 
   .cta-box .btn {
     width: 100%;
-
     justify-content: center;
   }
 
-/* ================= FOOTER ================= */
 
-    .site-footer {
-        padding: 55px 0 20px;
-    }
+  /* ---------- FOOTER ---------- */
 
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
-    }
+  .site-footer {
+    padding: 55px 0 20px;
+  }
 
-    .footer-description {
-        margin-inline: auto;
-        font-size: .82rem;
-    }
+  .footer-grid {
+    display: grid;
 
-    .footer-socials {
-        justify-content: center;
-    }
+    grid-template-columns: 1fr;
 
-    .footer-links {
-        justify-items: center;
-    }
+    gap: 30px;
 
-    .footer-contact {
-        justify-items: center;
-    }
+    text-align: center;
+  }
 
-    .footer-contact-item {
-        justify-content: center;
-        text-align: start;
-        font-size: .80rem;
-    }
+  .footer-description {
+    margin-inline: auto;
+    font-size: .82rem;
+  }
 
-    .footer-bottom {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 12px;
-    }
+  .footer-socials {
+    justify-content: center;
+  }
 
-    .footer-bottom-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
+  .footer-links {
+    justify-items: center;
+  }
+
+  .footer-contact {
+    justify-items: center;
+  }
+
+  .footer-contact-item {
+    justify-content: center;
+
+    text-align: start;
+
+    font-size: .80rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 12px;
+  }
+
+  .footer-bottom-links {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 12px;
+  }
 
 
-  /* ================= MODAL ================= */
+  /* ---------- MODAL ---------- */
 
   .modal {
     width: calc(100% - 32px);
@@ -3232,7 +3219,7 @@ a {
   }
 
 
-  /* ================= TOAST ================= */
+  /* ---------- TOAST ---------- */
 
   .toast {
     left: 16px;
@@ -3240,8 +3227,20 @@ a {
     bottom: 16px;
 
     min-width: 0;
-
     width: auto;
+  }
+
+
+  /* ---------- BUTTONS ---------- */
+
+  .btn {
+    min-height: 48px;
+    padding-inline: 19px;
+  }
+
+  .hero-buttons .btn,
+  .cta-box .btn {
+    width: 100%;
   }
 }
 
@@ -3258,15 +3257,25 @@ a {
   }
 
 
-  /* ================= HEADER ================= */
+  /* ---------- HEADER ---------- */
 
   .header-inner {
-    min-height: 66px;
+    min-height: 64px;
+    gap: 5px;
+  }
+
+  .logo {
+    gap: 5px;
   }
 
   .logo-mark {
     width: 36px;
     height: 36px;
+  }
+
+  .logo-mark svg {
+    width: 23px;
+    height: 23px;
   }
 
   .logo-text {
@@ -3275,36 +3284,44 @@ a {
 
   .logo-text small {
     font-size: .52rem;
+    letter-spacing: .9px;
   }
 
   .header-actions {
     gap: 3px;
   }
 
-  .icon-btn {
-    width: 34px;
-    height: 34px;
-  }
-
+  .icon-btn,
   .login-btn {
-    width: 34px;
-    height: 34px;
+    width: 35px;
+    height: 35px;
+
+    min-height: 35px;
+
+    border-radius: 8px;
+  }
+
+  .icon-btn i,
+  .login-btn i {
+    font-size: .78rem;
   }
 
 
-  /* ================= NAV ================= */
+  /* ---------- NAV ---------- */
 
   .main-nav {
-    top: 72px;
+    top: 64px;
 
-    left: 12px;
-    right: 12px;
+    left: 8px;
+    right: 8px;
 
     padding: 10px;
+
+    max-height: calc(100vh - 74px);
   }
 
 
-  /* ================= HERO ================= */
+  /* ---------- HERO ---------- */
 
   .about-hero {
     min-height: 500px;
@@ -3323,7 +3340,7 @@ a {
   }
 
 
-  /* ================= STORY ================= */
+  /* ---------- STORY ---------- */
 
   .about-story {
     padding: 60px 0;
@@ -3331,7 +3348,6 @@ a {
 
   .story-image img {
     height: 330px;
-
     border-radius: 17px;
   }
 
@@ -3348,7 +3364,7 @@ a {
   }
 
 
-  /* ================= VALUES ================= */
+  /* ---------- VALUES / MISSION / TEAM / CTA ---------- */
 
   .values-section,
   .mission-section,
@@ -3362,7 +3378,11 @@ a {
   }
 
 
-  /* ================= NUMBERS ================= */
+  /* ---------- NUMBERS ---------- */
+
+  .numbers-section {
+    padding: 55px 0;
+  }
 
   .numbers-grid {
     gap: 10px;
@@ -3377,19 +3397,51 @@ a {
   }
 
 
-  /* ================= CTA ================= */
+  /* ---------- CTA ---------- */
 
   .cta-box {
     padding: 30px 18px;
   }
 
 
-  /* ================= FOOTER ================= */
+  /* ---------- FOOTER ---------- */
 
   .footer-grid {
     gap: 28px;
   }
+}
 
+
+/* =========================================================
+   VERY SMALL DEVICES
+   320px AND BELOW
+========================================================= */
+
+@media (max-width: 320px) {
+
+  .header-inner {
+    gap: 4px;
+  }
+
+  .header-actions {
+    gap: 2px;
+  }
+
+  .icon-btn,
+  .login-btn {
+    width: 33px;
+    height: 33px;
+    min-height: 33px;
+  }
+
+  .icon-btn i,
+  .login-btn i {
+    font-size: .72rem;
+  }
+
+  .logo-text {
+    font-size: 1.15rem;
+  }
 }
 
 
@@ -3414,7 +3466,72 @@ a {
 
 
 /* =========================================================
-   ACCESSIBILITY
+   RTL RESPONSIVE
+========================================================= */
+
+html[dir="rtl"] .nav-link,
+html[dir="rtl"] .dropdown-toggle {
+  text-align: right;
+}
+
+html[dir="rtl"] .main-nav.mobile-open {
+  text-align: right;
+}
+
+html[dir="rtl"] .footer-links a:hover {
+  transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .icon-btn:hover,
+  .login-btn:hover {
+    transform: none;
+  }
+}
+
+
+/* =========================================================
+   PREVENT HORIZONTAL OVERFLOW
+========================================================= */
+
+.hero,
+.intro,
+.stats,
+.birds,
+.services,
+.experience,
+.education,
+.cta,
+.site-footer {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   DESKTOP BUTTON WIDTH
+========================================================= */
+
+@media (min-width: 601px) {
+
+  .hero-buttons .btn {
+    width: auto;
+  }
+
+  .cta-box .btn {
+    flex-shrink: 0;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -3429,10 +3546,9 @@ a {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
   }
 }
-
-  
 
   </style>
 </head>
